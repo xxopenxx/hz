@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Processor</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2>Upload and Process File</h2>
+    <form action="process.php" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="file">Select file:</label>
+            <input type="file" class="form-control" id="file" name="file" required>
+        </div>
+        <div class="form-group">
+            <label for="type">Choose Processing Type:</label>
+            <select class="form-control" id="type" name="type">
+                <option value="gzip">GZIP Only (locales from flash_123 or html5)</option>
+                <option value="gzip_amf3">GZIP + AMF3 (SWF versions newer than flash_123)</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="action">Choose Action:</label>
+            <select class="form-control" id="action" name="action">
+                <option value="compress">Compress</option>
+                <option value="decompress">Decompress</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Process</button>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
