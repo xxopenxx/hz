@@ -71,9 +71,13 @@ class Utils{
         }
     }
 
-    public static function rewards($coins=0, $xp=0, $honor=0, $premium=0, $statPoints=0, $item=0, $league_points=0){
+    public static function rewards($coins=0, $xp=0, $honor=0, $premium=0, $statPoints=0, $item=0, $league_points=0, $dungeon_key = null){
         if(is_object($item)) $item = $item->id;
-        return json_encode(['coins'=>$coins,'xp'=>$xp,'honor'=>$honor,'premium'=>$premium,'statPoints'=>$statPoints,'item'=>$item,'league_points'=>$league_points]);
+
+        $rewards = ['coins'=>$coins,'xp'=>$xp,'honor'=>$honor,'premium'=>$premium,'statPoints'=>$statPoints,'item'=>$item,'league_points'=>$league_points];
+        if($dungeon_key != null) $rewards['dungeon_key'] = $dungeon_key;
+
+        return json_encode($rewards);
     }
     
     public static function clamp($min, $max, $value){
@@ -133,8 +137,38 @@ class Utils{
             $coins *= (1+(($player->guild->stat_quest_game_currency_reward_boost*2)/100));
             $xp *= (1+(($player->guild->stat_quest_xp_reward_boost*2)/100));
         }
+
+        // dungeon
+        $map = null;
+        if (rand(1, 100) <= 20) {
+            $dungeon_templates = GameSettings::getConstant('dungeon_templates');
+            if (!empty($player->dungeons)) {
+                foreach ($player->dungeons as $dungeon) {
+                    if ($dungeon->status == 1) {
+                        $required_level = $dungeon_templates[$dungeon->identifier]['min_level'];
+                        if ($player->character->level >= $required_level) {
+                            $map = $dungeon->identifier;
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+
+        if ($map != null) {
+            $rewards = Utils::rewards(round($coins), round($xp), 0, 0, 0, 0, 0, $map);
+        } else {
+            $rewards = Utils::rewards(round($coins), round($xp));
+        }
+
+        $identifier = "quest_stage{$stage}_{$qType}".mt_rand(1, QuestList::$QUEST_DATA["stage$stage"][$type-1]);
+
+        if (isset(QuestList::$QUEST_FIGHT_NPC[$identifier])) {
+            $npcidentifier = QuestList::$QUEST_FIGHT_NPC[$identifier];
+        }
+
         return [
-            'identifier'=> "quest_stage{$stage}_{$qType}".mt_rand(1, QuestList::$QUEST_DATA["stage$stage"][$type-1]),
+            'identifier'=> $identifier,
             'type'=> $type, //1 czasowa | 2 fight
             'stage'=> $stage,
             'level'=> $lvl,
@@ -144,7 +178,7 @@ class Utils{
             'energy_cost'=> round($energy),
             'fight_difficulty'=> $difficulty,
             'fight_npc_identifier'=> $npcidentifier,
-            'rewards'=> Utils::rewards(round($coins), round($xp))
+            'rewards'=> $rewards
         ];
     }
     
@@ -316,6 +350,24 @@ class Utils{
 		return round($_loc_6 * $_loc_5);
 	}
 	
+    public static function getGoalRewardCoins($param1, $param2){
+        $_loc_1 = Utils::coinsPerTime($param1);
+        $_loc_2 = GameSettings::getConstant('goal_reward_game_currency_time');
+        $_loc_3 = GameSettings::getConstant('goal_reward_game_currency_percentage_base');
+        $_loc_4 = round($_loc_1 * $_loc_3 * $param2 * $_loc_2);
+        $_loc_5 = $_loc_4 + pow($param1, GameSettings::getConstant('goal_reward_game_currency_exp'));
+        return round($_loc_5);
+    }
+
+    public static function getGoalRewardXp($param1, $param2){
+        $_loc_1 = GameSettings::getConstant("levels");
+        $_loc_2 = $_loc_1[$param1]['xp'];
+        $_loc_3 = $_loc_1[$param1+1]['xp'] - $_loc_2;
+        $_loc_4 = GameSettings::getConstant("goal_reward_xp_percentage_base");
+        $_loc_5 = round($_loc_3 * $_loc_4 * $param2);
+        return round($_loc_5);
+    }
+
 	public static function checkPlayerStatus($time){
 		return (time() - $time < 60?true:false);
 	}

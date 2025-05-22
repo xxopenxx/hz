@@ -28,5 +28,11 @@ class sewInventoryItem{
 				"identifier" => $item_2->identifier
 			]
         );
+
+		$itemSewed = $player->getCurrentGoalValue('item_sewed');
+		$player->updateCurrentGoalValue('item_sewed', $itemSewed + 1);
+		if (($itemSewed + 1) == 1) {
+			$player->updateCurrentGoalValue('first_item_sewed', 1);
+		}
     }
 }

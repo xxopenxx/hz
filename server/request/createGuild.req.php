@@ -62,5 +62,10 @@ class createGuild{
 		    'guild'=>$player->guild,
 		    'guild_members'=>$player->guild->getMembers()
 		];
+
+        $guildJoined = $player->getCurrentGoalValue('guild_joined');
+        if ($guildJoined == 0){
+            $player->updateCurrentGoalValue('guild_joined', 1);
+        }
     }
 }

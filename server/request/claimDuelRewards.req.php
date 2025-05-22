@@ -11,6 +11,13 @@ class claimDuelRewards{
             
         $player->giveRewards($player->duel->character_a_rewards);
         
+        $duelsCompleted = $player->getCurrentGoalValue('duels_completed');
+        $player->updateCurrentGoalValue('duels_completed', $duelsCompleted + 1);
+
+        if(($duelsCompleted + 1) == 2) {
+            $player->updateCurrentGoalValue('second_duel_completed', 2);
+        }
+
         $player->character->active_duel_id = 0;
         $player->duel->character_a_status = 3;
         

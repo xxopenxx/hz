@@ -16,10 +16,16 @@ class claimTrainingRewards{
         $stat_trained = Utils::getStatById($player->training->stat_type);
         
         $player->character->{$stat_name} += $player->training->iterations;
-        if($player->character->{$stat_name} >= $player->character->{$stat_name_end}){
+        if($player->character->{$stat_name} >= $player->character->{$stat_name_end}) {
             $player->character->{$stat_name} = 0;
             $player->character->{'stat_trained_'.$stat_trained} += Config::get('constants.training_stat_increase_value');
             $player->character->{'stat_base_'.$stat_trained} += Config::get('constants.training_stat_increase_value');
+
+            $trainingsAbsolved = $player->getCurrentGoalValue('trainings_absolved');
+            $player->updateCurrentGoalValue('trainings_absolved', $trainingsAbsolved + 1);
+            if (($trainingsAbsolved + 1) == 1) {
+                $player->updateCurrentGoalValue('first_training_absolved', 1);
+            }
         }
         //$player->setCharacter('training_count', $player->getCharacter('training_count')-1);
         
@@ -31,7 +37,6 @@ class claimTrainingRewards{
         $player->training->remove();
         $player->character->active_training_id = 0;
         $player->calculateStats();
-
 
         Core::req()->data = array(
             'character'=>$player->character

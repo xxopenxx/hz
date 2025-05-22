@@ -28,5 +28,16 @@ class generateNewQuests{
             'character'=>$player->character,
             'quests'=>$player->quests
         );
+
+        $questRefresh = $player->getCurrentGoalValue('quest_refresh');
+        if ($questRefresh == 0) {
+            $player->updateCurrentGoalValue('quest_refresh', 1);
+        }
+
+        $questRefreshed = $player->getCurrentGoalValue('quest_refreshed');
+        $player->updateCurrentGoalValue('quest_refreshed', $questRefreshed + 1);
+
+        $questRefreshedDay = $player->getCurrentGoalValue('quest_refreshed_a_day');
+        $player->updateCurrentGoalValue('quest_refreshed_a_day', $questRefreshedDay + 1);
     }
 }

@@ -30,6 +30,11 @@ class donateToGuild{
         
         $player->guild->addLog($player, GuildLogType::MemberDonated, $game_curr, $premium_curr);
         
+        $guildDonated = $player->getCurrentGoalValue('guild_donated');
+        if ($guildDonated == 0) {
+            $player->updateCurrentGoalValue('guild_donated', 1);
+        }
+
         Core::req()->data = [
             'character'=>$player->character,
             'guild'=>$player->guild

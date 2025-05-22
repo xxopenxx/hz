@@ -23,5 +23,10 @@ class sellInventoryItem{
             'character'=>$player->character,
             'inventory'=>array('id'=>$player->inventory->id, $slot_name=>0)
         );
+
+        $itemSold = $player->getCurrentGoalValue('item_sold');
+        if ($itemSold == 0) {
+            $player->updateCurrentGoalValue('item_sold', 1);
+        }
     }
 }

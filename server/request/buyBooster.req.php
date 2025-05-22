@@ -32,6 +32,12 @@ class buyBooster{
 		$actId = 'active_'.$types[$booster['type']-1].'_booster_id';
 		$tsCol = 'ts_active_'.$types[$booster['type']-1].'_boost_expires';
 		
+		$boosterTypeGoal = ['mission', 'stats', 'work'][$booster['type'] - 1];
+		$boosterBought = $player->getCurrentGoalValue("{$boosterTypeGoal}_booster_bought");
+		if ($boosterBought == 0) {
+			$player->updateCurrentGoalValue("{$boosterTypeGoal}_booster_bought", 1);
+		}
+
 		$addTime = time();
 		if($player->character->{$tsCol} > time())
 			$addTime = $player->character->{$tsCol};

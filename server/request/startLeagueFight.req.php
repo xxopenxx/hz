@@ -70,5 +70,8 @@ class startLeagueFight{
 			"opponent_inventory_items" => $opponentEq['items'],
 			"inventory" => $player->inventory
         );
+
+        $leagueFightStartedDay = $player->getCurrentGoalValue('league_fights_started_a_day');
+        $player->updateCurrentGoalValue('league_fights_started_a_day', $leagueFightStartedDay + 1);
     }
 }

@@ -58,5 +58,10 @@ class joinGuild{
         	Core::req()->data['pending_guild_battle_defense'] = $pendingDefense->battle->getDataForDefender();
         	Core::req()->data['guild_battle_guilds'][] = $pendingDefense->gAttacker;
         }
+
+        $guildJoined = $player->getCurrentGoalValue('guild_joined');
+        if ($guildJoined == 0){
+            $player->updateCurrentGoalValue('guild_joined', 1);
+        }
     }
 }

@@ -30,15 +30,25 @@ class checkForQuestComplete{
             $questbattle->save();
             $quest->fight_battle_id = $questbattle->battle->id;
             //
-            if($questbattle->battle->winner == 'b'){
+            if($questbattle->battle->winner == 'b') {
                 $rewards = json_decode($quest->rewards, true);
                 $rewards['coins'] = round($rewards['coins'] * Config::get('constants.fight_quest_reward_lost_coin'));
                 $rewards['xp'] = round($rewards['xp'] * Config::get('constants.fight_quest_reward_lost_xp'));
                 $rewards = json_encode($rewards);
                 $quest->rewards = $rewards;
             }
+
+            if (($quest->fight_difficulty == 3) && ($questbattle->battle->winner == 'a')) {
+                $fightQuestsWonHard = $player->getCurrentGoalValue('fight_quests_won_hard');
+                $player->updateCurrentGoalValue('fight_quests_won_hard', $fightQuestsWonHard + 1);
+            }
         }
         
+        if (isset($player->current_goal_values[$quest->identifier])) {
+            $goalQuestValue = $player->getCurrentGoalValue($quest->identifier);
+            $player->updateCurrentGoalValue($quest->identifier, $goalQuestValue + 1);
+        }
+
         Core::req()->data = array(
             'character'=>$player->character,
             'quest'=>['id'=>$quest->id,'status'=>$quest->status,'ts_complete'=>$quest->ts_complete]

@@ -11,7 +11,7 @@ return [
             'hostname'=>        'localhost',
             'username'=>        'root',
             'password'=>        '',
-            'database'=>        'test',
+            'database'=>        'hz',
             'charset'=>         'utf8',
             
             //For file connection

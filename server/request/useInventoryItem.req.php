@@ -52,6 +52,32 @@ class useInventoryItem{
                     'character'=>$player->character,
                     'inventory'=>['id'=>$player->inventory->id, $itemslotname=>0]
                 ];
+
+                $sidekickCollected = $player->getCurrentGoalValue('sidekick_collected');
+                $player->updateCurrentGoalValue('sidekick_collected', $sidekickCollected + 1);
+
+                $diffSidekicks = [];
+                $sidekicks = Sidekicks::findAll(function($q) use($player) {
+                    $q->where('character_id', $player->character->id);
+                });
+
+                foreach ($sidekicks as $sidekick) {
+                    $parts = explode('_', $sidekick->identifier);
+                    
+                    if (count($parts) >= 2) {
+                        $type = $parts[1];
+                        $clean_type = preg_replace('/[0-9]/', '', $type);
+                        
+                        if (!in_array($clean_type, $diffSidekicks)) {
+                            $diffSidekicks[] = $clean_type;
+                        }
+                    }
+                }
+
+                $differentSidekicksCollected = $player->getCurrentGoalValue('different_sidekick_collected');
+                if (($countDiff = count($diffSidekicks)) > $differentSidekicksCollected) {
+                    $player->updateCurrentGoalValue('different_sidekick_collected', $countDiff);
+                }
             break;
             
             case 'reskill':

@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Czas generowania: 07 Gru 2019, 19:09
--- Wersja serwera: 10.1.41-MariaDB
--- Wersja PHP: 7.0.33
+-- Host: 127.0.0.1
+-- Generation Time: Maj 21, 2025 at 01:36 AM
+-- Wersja serwera: 10.4.32-MariaDB
+-- Wersja PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Baza danych: `DATABASE`
+-- Database: `hz`
 --
 
 -- --------------------------------------------------------
@@ -122,7 +121,7 @@ CREATE TABLE `bank_inventory` (
   `bank_item88_id` int(11) NOT NULL,
   `bank_item89_id` int(11) NOT NULL,
   `bank_item90_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -137,7 +136,7 @@ CREATE TABLE `battle` (
   `profile_b_stats` text NOT NULL,
   `winner` varchar(1) NOT NULL,
   `rounds` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -150,19 +149,19 @@ CREATE TABLE `character` (
   `user_id` int(11) NOT NULL,
   `name` varchar(32) NOT NULL,
   `gender` enum('m','f') NOT NULL,
-  `game_currency` int(11) UNSIGNED NOT NULL DEFAULT '0',
-  `xp` int(11) UNSIGNED NOT NULL DEFAULT '0',
-  `level` int(11) UNSIGNED NOT NULL DEFAULT '1',
+  `game_currency` int(11) UNSIGNED NOT NULL DEFAULT 0,
+  `xp` int(11) UNSIGNED NOT NULL DEFAULT 0,
+  `level` int(11) UNSIGNED NOT NULL DEFAULT 1,
   `description` varchar(255) NOT NULL,
   `note` varchar(512) NOT NULL,
   `ts_last_action` int(11) NOT NULL,
-  `score_honor` int(11) NOT NULL DEFAULT '10',
-  `score_level` int(11) NOT NULL DEFAULT '10',
+  `score_honor` int(11) NOT NULL DEFAULT 10,
+  `score_level` int(11) NOT NULL DEFAULT 10,
   `stat_points_available` mediumint(9) NOT NULL,
-  `stat_base_stamina` smallint(6) NOT NULL DEFAULT '10',
-  `stat_base_strength` smallint(6) NOT NULL DEFAULT '10',
-  `stat_base_critical_rating` smallint(6) NOT NULL DEFAULT '10',
-  `stat_base_dodge_rating` smallint(6) NOT NULL DEFAULT '10',
+  `stat_base_stamina` smallint(6) NOT NULL DEFAULT 10,
+  `stat_base_strength` smallint(6) NOT NULL DEFAULT 10,
+  `stat_base_critical_rating` smallint(6) NOT NULL DEFAULT 10,
+  `stat_base_dodge_rating` smallint(6) NOT NULL DEFAULT 10,
   `stat_bought_stamina` mediumint(8) NOT NULL,
   `stat_bought_strength` mediumint(8) NOT NULL,
   `stat_bought_critical_rating` mediumint(8) NOT NULL,
@@ -177,17 +176,17 @@ CREATE TABLE `character` (
   `active_league_booster_id` varchar(16) NOT NULL,
   `ts_active_league_boost_expires` int(11) NOT NULL,
   `ts_active_multitasking_boost_expires` int(11) NOT NULL,
-  `max_quest_stage` smallint(6) NOT NULL DEFAULT '1',
-  `current_quest_stage` smallint(6) NOT NULL DEFAULT '1',
-  `quest_energy` smallint(6) NOT NULL DEFAULT '100',
-  `max_quest_energy` smallint(6) NOT NULL DEFAULT '1000',
+  `max_quest_stage` smallint(6) NOT NULL DEFAULT 1,
+  `current_quest_stage` smallint(6) NOT NULL DEFAULT 1,
+  `quest_energy` smallint(6) NOT NULL DEFAULT 100,
+  `max_quest_energy` smallint(6) NOT NULL DEFAULT 1000,
   `ts_last_quest_energy_refill` int(11) NOT NULL,
   `quest_energy_refill_amount_today` smallint(6) NOT NULL,
   `quest_reward_training_sessions_rewarded_today` smallint(6) NOT NULL,
-  `honor` mediumint(8) UNSIGNED NOT NULL DEFAULT '100',
+  `honor` mediumint(8) UNSIGNED NOT NULL DEFAULT 100,
   `ts_last_duel` int(11) NOT NULL,
-  `duel_stamina` smallint(6) NOT NULL DEFAULT '100',
-  `max_duel_stamina` smallint(6) NOT NULL DEFAULT '100',
+  `duel_stamina` smallint(6) NOT NULL DEFAULT 100,
+  `max_duel_stamina` smallint(6) NOT NULL DEFAULT 100,
   `ts_last_duel_stamina_change` int(11) NOT NULL,
   `ts_last_duel_enemies_refresh` int(11) NOT NULL,
   `current_work_offer_id` varchar(32) NOT NULL DEFAULT 'work1',
@@ -199,13 +198,13 @@ CREATE TABLE `character` (
   `training_progress_value_strength` mediumint(8) NOT NULL,
   `training_progress_value_critical_rating` mediumint(8) NOT NULL,
   `training_progress_value_dodge_rating` mediumint(8) NOT NULL,
-  `training_progress_end_stamina` smallint(6) NOT NULL DEFAULT '3',
-  `training_progress_end_strength` smallint(6) NOT NULL DEFAULT '3',
-  `training_progress_end_critical_rating` smallint(6) NOT NULL DEFAULT '3',
-  `training_progress_end_dodge_rating` smallint(6) NOT NULL DEFAULT '3',
+  `training_progress_end_stamina` smallint(6) NOT NULL DEFAULT 3,
+  `training_progress_end_strength` smallint(6) NOT NULL DEFAULT 3,
+  `training_progress_end_critical_rating` smallint(6) NOT NULL DEFAULT 3,
+  `training_progress_end_dodge_rating` smallint(6) NOT NULL DEFAULT 3,
   `ts_last_training` int(11) NOT NULL,
-  `training_count` smallint(6) NOT NULL DEFAULT '10',
-  `max_training_count` smallint(6) NOT NULL DEFAULT '10',
+  `training_count` smallint(6) NOT NULL DEFAULT 10,
+  `max_training_count` smallint(6) NOT NULL DEFAULT 10,
   `active_worldboss_attack_id` int(11) NOT NULL,
   `active_dungeon_quest_id` int(11) NOT NULL,
   `ts_last_dungeon_quest_fail` int(11) NOT NULL,
@@ -219,8 +218,8 @@ CREATE TABLE `character` (
   `appearance_nose_type` tinyint(3) NOT NULL,
   `appearance_mouth_type` tinyint(3) NOT NULL,
   `appearance_facial_hair_type` tinyint(3) NOT NULL,
-  `appearance_decoration_type` tinyint(3) NOT NULL DEFAULT '1',
-  `show_mask` tinyint(1) NOT NULL DEFAULT '1',
+  `appearance_decoration_type` tinyint(3) NOT NULL DEFAULT 1,
+  `show_mask` tinyint(1) NOT NULL DEFAULT 1,
   `tutorial_flags` text NOT NULL,
   `guild_id` int(11) NOT NULL,
   `guild_rank` tinyint(2) NOT NULL,
@@ -234,7 +233,7 @@ CREATE TABLE `character` (
   `worldboss_event_attack_count` smallint(6) NOT NULL,
   `ts_last_wash_item` int(11) NOT NULL,
   `ts_last_daily_login_bonus` int(11) NOT NULL,
-  `daily_login_bonus_day` tinyint(3) NOT NULL DEFAULT '1',
+  `daily_login_bonus_day` tinyint(3) NOT NULL DEFAULT 1,
   `pending_tournament_rewards` int(11) NOT NULL,
   `ts_last_shop_refresh` int(11) NOT NULL,
   `shop_refreshes` smallint(6) NOT NULL,
@@ -255,22 +254,50 @@ CREATE TABLE `character` (
   `league_fight_count` int(11) NOT NULL,
   `league_opponents` varchar(32) NOT NULL,
   `ts_last_league_opponents_refresh` int(11) NOT NULL,
-  `league_stamina` smallint(6) NOT NULL DEFAULT '20',
-  `max_league_stamina` smallint(6) NOT NULL DEFAULT '20',
+  `league_stamina` smallint(6) NOT NULL DEFAULT 20,
+  `max_league_stamina` smallint(6) NOT NULL DEFAULT 20,
   `ts_last_league_stamina_change` int(11) NOT NULL,
   `duel_stamina_cost` int(11) NOT NULL,
-  `league_stamina_cost` int(11) NOT NULL DEFAULT '20',
+  `league_stamina_cost` int(11) NOT NULL DEFAULT 20,
   `herobook_objectives_renewed_today` int(11) NOT NULL,
   `slotmachine_spin_count` int(11) NOT NULL,
   `ts_last_slotmachine_refill` int(11) NOT NULL,
   `new_user_voucher_ids` varchar(32) NOT NULL,
   `current_energy_storage` int(11) NOT NULL,
   `current_training_storage` int(11) NOT NULL,
-  `received_sidekick` tinyint(1) NOT NULL DEFAULT '0',
-  `role` tinyint(1) NOT NULL DEFAULT '0',
+  `received_sidekick` tinyint(1) NOT NULL DEFAULT 0,
+  `role` tinyint(1) NOT NULL DEFAULT 0,
   `current_slotmachine_spin` int(11) NOT NULL,
   `online_status` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `collected_goals`
+--
+
+CREATE TABLE `collected_goals` (
+  `id` int(11) NOT NULL,
+  `character_id` int(11) NOT NULL,
+  `identifier` text NOT NULL,
+  `value` int(11) NOT NULL,
+  `date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `current_goal_values`
+--
+
+CREATE TABLE `current_goal_values` (
+  `id` int(11) NOT NULL,
+  `character_id` int(11) NOT NULL,
+  `identifier` text NOT NULL,
+  `value` int(11) NOT NULL,
+  `current_value` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -284,12 +311,12 @@ CREATE TABLE `duel` (
   `battle_id` int(11) NOT NULL,
   `character_a_id` int(11) NOT NULL,
   `character_b_id` int(11) NOT NULL,
-  `character_a_status` tinyint(1) NOT NULL DEFAULT '1',
-  `character_b_status` tinyint(1) NOT NULL DEFAULT '1',
+  `character_a_status` tinyint(1) NOT NULL DEFAULT 1,
+  `character_b_status` tinyint(1) NOT NULL DEFAULT 1,
   `character_a_rewards` text NOT NULL,
   `character_b_rewards` text NOT NULL,
   `unread` enum('true','false','','') NOT NULL DEFAULT 'true'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -301,12 +328,12 @@ CREATE TABLE `dungeons` (
   `id` int(11) NOT NULL,
   `character_id` int(11) NOT NULL,
   `identifier` varchar(32) NOT NULL,
-  `status` tinyint(3) NOT NULL DEFAULT '1',
+  `status` tinyint(3) NOT NULL DEFAULT 1,
   `current_dungeon_quest_id` int(11) NOT NULL,
-  `progress_index` tinyint(3) NOT NULL DEFAULT '1',
+  `progress_index` tinyint(3) NOT NULL DEFAULT 1,
   `mode` tinyint(3) NOT NULL,
-  `ts_last_complete` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `ts_last_complete` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -317,14 +344,42 @@ CREATE TABLE `dungeons` (
 CREATE TABLE `dungeon_quests` (
   `id` int(11) NOT NULL,
   `character_id` int(11) NOT NULL,
-  `character_level` tinyint(3) NOT NULL DEFAULT '0',
+  `character_level` tinyint(3) NOT NULL DEFAULT 0,
   `identifier` varchar(32) NOT NULL,
-  `status` tinyint(3) NOT NULL DEFAULT '1',
+  `status` tinyint(3) NOT NULL DEFAULT 1,
   `battle_id` int(11) NOT NULL,
   `rewards` varchar(200) NOT NULL,
   `mode` tinyint(3) NOT NULL,
-  `dungeon_id` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `dungeon_id` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `goal_items`
+--
+
+CREATE TABLE `goal_items` (
+  `id` int(11) NOT NULL,
+  `character_id` int(11) NOT NULL,
+  `identifier` varchar(100) NOT NULL,
+  `goal_identifier` text NOT NULL,
+  `type` tinyint(3) NOT NULL,
+  `quality` tinyint(3) NOT NULL,
+  `required_level` smallint(6) NOT NULL,
+  `charges` tinyint(4) NOT NULL,
+  `item_level` smallint(6) NOT NULL,
+  `ts_availability_start` int(11) NOT NULL,
+  `ts_availability_end` int(11) NOT NULL,
+  `premium_item` tinyint(1) NOT NULL DEFAULT 0,
+  `buy_price` mediumint(8) NOT NULL,
+  `sell_price` mediumint(8) NOT NULL,
+  `stat_stamina` mediumint(8) NOT NULL,
+  `stat_strength` mediumint(8) NOT NULL,
+  `stat_critical_rating` mediumint(8) NOT NULL,
+  `stat_dodge_rating` mediumint(8) NOT NULL,
+  `stat_weapon_damage` mediumint(8) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -342,12 +397,12 @@ CREATE TABLE `guild` (
   `note` text NOT NULL,
   `forum_page` varchar(128) NOT NULL,
   `premium_currency` int(11) NOT NULL,
-  `game_currency` int(11) NOT NULL DEFAULT '500',
-  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `game_currency` int(11) NOT NULL DEFAULT 500,
+  `status` tinyint(1) NOT NULL DEFAULT 1,
   `accept_members` tinyint(1) NOT NULL,
-  `honor` int(11) NOT NULL DEFAULT '1000',
+  `honor` int(11) NOT NULL DEFAULT 1000,
   `artifact_ids` text NOT NULL,
-  `missiles` int(11) NOT NULL DEFAULT '15',
+  `missiles` int(11) NOT NULL DEFAULT 15,
   `auto_joins` tinyint(1) NOT NULL,
   `battles_attacked` int(11) NOT NULL,
   `battles_defended` int(11) NOT NULL,
@@ -355,7 +410,7 @@ CREATE TABLE `guild` (
   `battles_lost` int(11) NOT NULL,
   `artifacts_won` int(11) NOT NULL,
   `artifacts_lost` int(11) NOT NULL,
-  `artifacts_owned_max` int(11) NOT NULL DEFAULT '2',
+  `artifacts_owned_max` int(11) NOT NULL DEFAULT 2,
   `artifacts_owned_current` int(11) NOT NULL,
   `ts_last_artifact_released` int(11) NOT NULL,
   `missiles_fired` int(11) NOT NULL,
@@ -363,37 +418,37 @@ CREATE TABLE `guild` (
   `dungeon_battles_fought` int(11) NOT NULL,
   `dungeon_battles_won` int(11) NOT NULL,
   `stat_points_available` int(11) NOT NULL,
-  `stat_guild_capacity` int(11) NOT NULL DEFAULT '10',
-  `stat_character_base_stats_boost` int(11) NOT NULL DEFAULT '1',
-  `stat_quest_xp_reward_boost` int(11) NOT NULL DEFAULT '1',
-  `stat_quest_game_currency_reward_boost` int(11) NOT NULL DEFAULT '1',
-  `arena_background` smallint(3) NOT NULL DEFAULT '1',
-  `emblem_background_shape` tinyint(3) NOT NULL DEFAULT '1',
-  `emblem_background_color` tinyint(3) NOT NULL DEFAULT '2',
+  `stat_guild_capacity` int(11) NOT NULL DEFAULT 10,
+  `stat_character_base_stats_boost` int(11) NOT NULL DEFAULT 1,
+  `stat_quest_xp_reward_boost` int(11) NOT NULL DEFAULT 1,
+  `stat_quest_game_currency_reward_boost` int(11) NOT NULL DEFAULT 1,
+  `arena_background` smallint(3) NOT NULL DEFAULT 1,
+  `emblem_background_shape` tinyint(3) NOT NULL DEFAULT 1,
+  `emblem_background_color` tinyint(3) NOT NULL DEFAULT 2,
   `emblem_background_border_color` tinyint(3) NOT NULL,
-  `emblem_icon_shape` tinyint(3) NOT NULL DEFAULT '1',
-  `emblem_icon_color` tinyint(3) NOT NULL DEFAULT '4',
-  `emblem_icon_size` smallint(3) NOT NULL DEFAULT '100',
-  `use_missiles_attack` tinyint(1) NOT NULL DEFAULT '1',
-  `use_missiles_defense` tinyint(1) NOT NULL DEFAULT '1',
-  `use_missiles_dungeon` tinyint(1) NOT NULL DEFAULT '1',
-  `use_auto_joins_attack` tinyint(1) NOT NULL DEFAULT '1',
-  `use_auto_joins_defense` tinyint(1) NOT NULL DEFAULT '1',
-  `use_auto_joins_dungeon` tinyint(1) NOT NULL DEFAULT '1',
+  `emblem_icon_shape` tinyint(3) NOT NULL DEFAULT 1,
+  `emblem_icon_color` tinyint(3) NOT NULL DEFAULT 4,
+  `emblem_icon_size` smallint(3) NOT NULL DEFAULT 100,
+  `use_missiles_attack` tinyint(1) NOT NULL DEFAULT 1,
+  `use_missiles_defense` tinyint(1) NOT NULL DEFAULT 1,
+  `use_missiles_dungeon` tinyint(1) NOT NULL DEFAULT 1,
+  `use_auto_joins_attack` tinyint(1) NOT NULL DEFAULT 1,
+  `use_auto_joins_defense` tinyint(1) NOT NULL DEFAULT 1,
+  `use_auto_joins_dungeon` tinyint(1) NOT NULL DEFAULT 1,
   `pending_leader_vote_id` int(11) NOT NULL,
   `min_apply_level` int(11) NOT NULL,
   `min_apply_honor` int(11) NOT NULL,
-  `guild_battle_tactics_attack_order` int(11) NOT NULL DEFAULT '1',
-  `guild_battle_tactics_attack_tactic` int(11) NOT NULL DEFAULT '10',
-  `guild_battle_tactics_defense_order` int(11) NOT NULL DEFAULT '1',
-  `guild_battle_tactics_defense_tactic` int(11) NOT NULL DEFAULT '10',
+  `guild_battle_tactics_attack_order` int(11) NOT NULL DEFAULT 1,
+  `guild_battle_tactics_attack_tactic` int(11) NOT NULL DEFAULT 10,
+  `guild_battle_tactics_defense_order` int(11) NOT NULL DEFAULT 1,
+  `guild_battle_tactics_defense_tactic` int(11) NOT NULL DEFAULT 10,
   `active_training_booster_id` varchar(40) NOT NULL,
   `ts_active_training_boost_expires` int(11) NOT NULL,
   `active_quest_booster_id` varchar(40) NOT NULL,
   `ts_active_quest_boost_expires` int(11) NOT NULL,
   `active_duel_booster_id` varchar(40) NOT NULL,
   `ts_active_duel_boost_expires` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -417,7 +472,7 @@ CREATE TABLE `guild_battle` (
   `attacker_rewards` text NOT NULL,
   `defender_rewards` text NOT NULL,
   `initiator_character_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -430,10 +485,10 @@ CREATE TABLE `guild_battle_rewards` (
   `guild_battle_id` int(11) NOT NULL,
   `character_id` int(111) NOT NULL,
   `game_currency` int(11) NOT NULL,
-  `item_id` int(11) NOT NULL DEFAULT '0',
-  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `item_id` int(11) NOT NULL DEFAULT 0,
+  `status` tinyint(1) NOT NULL DEFAULT 1,
   `type` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -449,7 +504,7 @@ CREATE TABLE `guild_dungeon` (
   `settings` text NOT NULL,
   `ts_unlock` int(11) NOT NULL,
   `locking_character_name` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -472,7 +527,7 @@ CREATE TABLE `guild_dungeon_battle` (
   `rounds` varchar(128) NOT NULL,
   `rewards` varchar(128) NOT NULL,
   `initiator_character_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -485,7 +540,7 @@ CREATE TABLE `guild_invites` (
   `character_id` int(11) NOT NULL,
   `guild_id` int(11) NOT NULL,
   `ts_creation` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -503,7 +558,7 @@ CREATE TABLE `guild_logs` (
   `value2` varchar(64) NOT NULL,
   `value3` varchar(64) NOT NULL,
   `timestamp` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -521,7 +576,7 @@ CREATE TABLE `guild_messages` (
   `is_private` tinyint(1) NOT NULL,
   `message` text NOT NULL,
   `timestamp` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -603,7 +658,34 @@ CREATE TABLE `hideout` (
   `room_slot_8_2` int(11) NOT NULL,
   `room_slot_8_3` int(11) NOT NULL,
   `room_slot_8_4` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `hideout_battle`
+--
+
+CREATE TABLE `hideout_battle` (
+  `id` int(11) NOT NULL,
+  `attacker_hideout_id` int(11) NOT NULL,
+  `defender_hideout_id` int(11) NOT NULL,
+  `attacker_status` int(11) NOT NULL,
+  `defender_status` int(11) NOT NULL,
+  `attacker_count` int(11) NOT NULL,
+  `attacker_profiles` text NOT NULL,
+  `defender_count` int(11) NOT NULL,
+  `defender_profiles` text NOT NULL,
+  `hideout_winner_id` int(11) NOT NULL,
+  `rounds` text NOT NULL,
+  `attacker_rewards` text NOT NULL,
+  `attacker_bonus_rewards` text NOT NULL,
+  `defender_rewards` text NOT NULL,
+  `destroyed_attacker` int(11) NOT NULL,
+  `destroyed_defender` int(11) NOT NULL,
+  `attacker_character_name` varchar(255) DEFAULT '',
+  `defender_character_name` varchar(255) DEFAULT ''
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -625,7 +707,7 @@ CREATE TABLE `hideout_room` (
   `current_generator_level` int(11) NOT NULL,
   `additional_value_1` int(11) NOT NULL,
   `additional_value_2` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -644,10 +726,10 @@ CREATE TABLE `inventory` (
   `weapon_item_id` int(11) NOT NULL,
   `gadget_item_id` int(11) NOT NULL,
   `missiles_item_id` int(11) NOT NULL,
-  `missiles1_item_id` int(11) NOT NULL DEFAULT '-1',
-  `missiles2_item_id` int(11) NOT NULL DEFAULT '-1',
-  `missiles3_item_id` int(11) NOT NULL DEFAULT '-1',
-  `missiles4_item_id` int(11) NOT NULL DEFAULT '-1',
+  `missiles1_item_id` int(11) NOT NULL DEFAULT -1,
+  `missiles2_item_id` int(11) NOT NULL DEFAULT -1,
+  `missiles3_item_id` int(11) NOT NULL DEFAULT -1,
+  `missiles4_item_id` int(11) NOT NULL DEFAULT -1,
   `sidekick_id` int(11) NOT NULL,
   `bag_item1_id` int(11) NOT NULL,
   `bag_item2_id` int(11) NOT NULL,
@@ -687,7 +769,7 @@ CREATE TABLE `inventory` (
   `shop2_item9_id` int(11) NOT NULL,
   `item_set_data` varchar(64) NOT NULL,
   `sidekick_data` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -706,7 +788,7 @@ CREATE TABLE `items` (
   `item_level` smallint(6) NOT NULL,
   `ts_availability_start` int(11) NOT NULL,
   `ts_availability_end` int(11) NOT NULL,
-  `premium_item` tinyint(1) NOT NULL DEFAULT '0',
+  `premium_item` tinyint(1) NOT NULL DEFAULT 0,
   `buy_price` mediumint(8) NOT NULL,
   `sell_price` mediumint(8) NOT NULL,
   `stat_stamina` mediumint(8) NOT NULL,
@@ -714,7 +796,7 @@ CREATE TABLE `items` (
   `stat_critical_rating` mediumint(8) NOT NULL,
   `stat_dodge_rating` mediumint(8) NOT NULL,
   `stat_weapon_damage` mediumint(8) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -728,12 +810,12 @@ CREATE TABLE `league_fight` (
   `battle_id` int(11) NOT NULL,
   `character_a_id` int(11) NOT NULL,
   `character_b_id` int(11) NOT NULL,
-  `character_a_status` tinyint(1) NOT NULL DEFAULT '1',
-  `character_b_status` tinyint(1) NOT NULL DEFAULT '1',
+  `character_a_status` tinyint(1) NOT NULL DEFAULT 1,
+  `character_b_status` tinyint(1) NOT NULL DEFAULT 1,
   `character_a_rewards` text NOT NULL,
   `character_b_rewards` text NOT NULL,
   `unread` enum('true','false','','') NOT NULL DEFAULT 'true'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -751,7 +833,7 @@ CREATE TABLE `messages` (
   `flag_value` varchar(64) NOT NULL,
   `ts_creation` int(11) NOT NULL,
   `readed` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -766,18 +848,31 @@ CREATE TABLE `quests` (
   `type` tinyint(3) NOT NULL,
   `stage` tinyint(3) NOT NULL,
   `level` mediumint(8) NOT NULL,
-  `status` tinyint(3) NOT NULL DEFAULT '1',
-  `duration_type` tinyint(3) NOT NULL DEFAULT '1',
+  `status` tinyint(3) NOT NULL DEFAULT 1,
+  `duration_type` tinyint(3) NOT NULL DEFAULT 1,
   `duration_raw` smallint(6) NOT NULL,
   `duration` smallint(6) NOT NULL,
-  `ts_complete` int(11) NOT NULL DEFAULT '0',
+  `ts_complete` int(11) NOT NULL DEFAULT 0,
   `energy_cost` smallint(6) NOT NULL,
-  `fight_difficulty` tinyint(3) NOT NULL DEFAULT '0',
+  `fight_difficulty` tinyint(3) NOT NULL DEFAULT 0,
   `fight_npc_identifier` varchar(60) NOT NULL,
-  `fight_battle_id` int(11) NOT NULL DEFAULT '0',
-  `used_resources` tinyint(3) NOT NULL DEFAULT '0',
+  `fight_battle_id` int(11) NOT NULL DEFAULT 0,
+  `used_resources` tinyint(3) NOT NULL DEFAULT 0,
   `rewards` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `shoutbox_messages`
+--
+
+CREATE TABLE `shoutbox_messages` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `message` text NOT NULL,
+  `timestamp` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -790,10 +885,10 @@ CREATE TABLE `sidekicks` (
   `identifier` varchar(32) NOT NULL,
   `character_id` int(11) NOT NULL,
   `name` varchar(32) NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT '1',
-  `quality` tinyint(1) NOT NULL DEFAULT '1',
-  `level` int(11) NOT NULL DEFAULT '1',
-  `xp` int(11) NOT NULL DEFAULT '0',
+  `status` tinyint(1) NOT NULL DEFAULT 1,
+  `quality` tinyint(1) NOT NULL DEFAULT 1,
+  `level` int(11) NOT NULL DEFAULT 1,
+  `xp` int(11) NOT NULL DEFAULT 0,
   `stat_base_stamina` mediumint(9) NOT NULL,
   `stat_base_strength` mediumint(9) NOT NULL,
   `stat_base_critical_rating` mediumint(9) NOT NULL,
@@ -805,7 +900,7 @@ CREATE TABLE `sidekicks` (
   `stage1_skill_id` mediumint(5) NOT NULL,
   `stage2_skill_id` mediumint(5) NOT NULL,
   `stage3_skill_id` mediumint(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -820,12 +915,12 @@ CREATE TABLE `slotmachines` (
   `slotmachine_slot1` tinyint(3) UNSIGNED NOT NULL,
   `slotmachine_slot2` tinyint(3) UNSIGNED NOT NULL,
   `slotmachine_slot3` tinyint(3) UNSIGNED NOT NULL,
-  `slot` tinyint(1) NOT NULL DEFAULT '0',
-  `won` tinyint(1) NOT NULL DEFAULT '0',
+  `slot` tinyint(1) NOT NULL DEFAULT 0,
+  `won` tinyint(1) NOT NULL DEFAULT 0,
   `reward` text NOT NULL,
-  `history` tinyint(1) NOT NULL DEFAULT '0',
+  `history` tinyint(1) NOT NULL DEFAULT 0,
   `timestamp` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -842,7 +937,7 @@ CREATE TABLE `training` (
   `ts_complete` int(11) NOT NULL,
   `iterations` tinyint(1) NOT NULL,
   `used_resources` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -867,7 +962,7 @@ CREATE TABLE `user` (
   `session_id_cache3` varchar(32) NOT NULL,
   `session_id_cache4` varchar(32) NOT NULL,
   `session_id_cache5` varchar(32) NOT NULL,
-  `premium_currency` int(11) NOT NULL DEFAULT '0',
+  `premium_currency` int(11) NOT NULL DEFAULT 0,
   `locale` varchar(6) NOT NULL DEFAULT 'pl_PL',
   `network` varchar(10) NOT NULL,
   `geo_country_code` varchar(3) NOT NULL DEFAULT 'PL',
@@ -876,9 +971,9 @@ CREATE TABLE `user` (
   `geo_continent_code` varchar(3) NOT NULL DEFAULT 'EU',
   `settings` varchar(250) NOT NULL DEFAULT '{"tos_sep2015":true}',
   `ts_banned` int(11) NOT NULL,
-  `trusted` tinyint(1) NOT NULL DEFAULT '0',
+  `trusted` tinyint(1) NOT NULL DEFAULT 0,
   `confirmed` bit(1) NOT NULL DEFAULT b'0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -894,7 +989,7 @@ CREATE TABLE `work` (
   `duration` int(11) NOT NULL,
   `ts_complete` int(11) NOT NULL,
   `rewards` mediumtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Indeksy dla zrzutów tabel
@@ -924,6 +1019,20 @@ ALTER TABLE `character`
   ADD KEY `level` (`level`);
 
 --
+-- Indeksy dla tabeli `collected_goals`
+--
+ALTER TABLE `collected_goals`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `collected_goals` (`character_id`);
+
+--
+-- Indeksy dla tabeli `current_goal_values`
+--
+ALTER TABLE `current_goal_values`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `current_goal_values` (`character_id`);
+
+--
 -- Indeksy dla tabeli `duel`
 --
 ALTER TABLE `duel`
@@ -944,6 +1053,12 @@ ALTER TABLE `dungeons`
 ALTER TABLE `dungeon_quests`
   ADD PRIMARY KEY (`id`),
   ADD KEY `dungeon_quests` (`character_id`,`status`);
+
+--
+-- Indeksy dla tabeli `goal_items`
+--
+ALTER TABLE `goal_items`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeksy dla tabeli `guild`
@@ -1011,6 +1126,12 @@ ALTER TABLE `hideout`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeksy dla tabeli `hideout_battle`
+--
+ALTER TABLE `hideout_battle`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeksy dla tabeli `hideout_room`
 --
 ALTER TABLE `hideout_room`
@@ -1054,6 +1175,13 @@ ALTER TABLE `quests`
   ADD KEY `quests` (`character_id`,`status`);
 
 --
+-- Indeksy dla tabeli `shoutbox_messages`
+--
+ALTER TABLE `shoutbox_messages`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
 -- Indeksy dla tabeli `sidekicks`
 --
 ALTER TABLE `sidekicks`
@@ -1094,157 +1222,187 @@ ALTER TABLE `work`
 --
 
 --
--- AUTO_INCREMENT dla tabeli `bank_inventory`
+-- AUTO_INCREMENT for table `bank_inventory`
 --
 ALTER TABLE `bank_inventory`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT dla tabeli `battle`
+-- AUTO_INCREMENT for table `battle`
 --
 ALTER TABLE `battle`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT dla tabeli `character`
+-- AUTO_INCREMENT for table `character`
 --
 ALTER TABLE `character`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT dla tabeli `duel`
+-- AUTO_INCREMENT for table `collected_goals`
+--
+ALTER TABLE `collected_goals`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `current_goal_values`
+--
+ALTER TABLE `current_goal_values`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `duel`
 --
 ALTER TABLE `duel`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT dla tabeli `dungeons`
+-- AUTO_INCREMENT for table `dungeons`
 --
 ALTER TABLE `dungeons`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT dla tabeli `dungeon_quests`
+-- AUTO_INCREMENT for table `dungeon_quests`
 --
 ALTER TABLE `dungeon_quests`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT dla tabeli `guild`
+-- AUTO_INCREMENT for table `goal_items`
+--
+ALTER TABLE `goal_items`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `guild`
 --
 ALTER TABLE `guild`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT dla tabeli `guild_battle`
+-- AUTO_INCREMENT for table `guild_battle`
 --
 ALTER TABLE `guild_battle`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT dla tabeli `guild_battle_rewards`
+-- AUTO_INCREMENT for table `guild_battle_rewards`
 --
 ALTER TABLE `guild_battle_rewards`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT dla tabeli `guild_dungeon`
+-- AUTO_INCREMENT for table `guild_dungeon`
 --
 ALTER TABLE `guild_dungeon`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT dla tabeli `guild_dungeon_battle`
+-- AUTO_INCREMENT for table `guild_dungeon_battle`
 --
 ALTER TABLE `guild_dungeon_battle`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT dla tabeli `guild_invites`
+-- AUTO_INCREMENT for table `guild_invites`
 --
 ALTER TABLE `guild_invites`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT dla tabeli `guild_logs`
+-- AUTO_INCREMENT for table `guild_logs`
 --
 ALTER TABLE `guild_logs`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT dla tabeli `guild_messages`
+-- AUTO_INCREMENT for table `guild_messages`
 --
 ALTER TABLE `guild_messages`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT dla tabeli `hideout`
+-- AUTO_INCREMENT for table `hideout`
 --
 ALTER TABLE `hideout`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT dla tabeli `hideout_room`
+-- AUTO_INCREMENT for table `hideout_battle`
+--
+ALTER TABLE `hideout_battle`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `hideout_room`
 --
 ALTER TABLE `hideout_room`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT dla tabeli `inventory`
+-- AUTO_INCREMENT for table `inventory`
 --
 ALTER TABLE `inventory`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT dla tabeli `items`
+-- AUTO_INCREMENT for table `items`
 --
 ALTER TABLE `items`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT dla tabeli `league_fight`
+-- AUTO_INCREMENT for table `league_fight`
 --
 ALTER TABLE `league_fight`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT dla tabeli `messages`
+-- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT dla tabeli `quests`
+-- AUTO_INCREMENT for table `quests`
 --
 ALTER TABLE `quests`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT dla tabeli `sidekicks`
+-- AUTO_INCREMENT for table `shoutbox_messages`
+--
+ALTER TABLE `shoutbox_messages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `sidekicks`
 --
 ALTER TABLE `sidekicks`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT dla tabeli `slotmachines`
+-- AUTO_INCREMENT for table `slotmachines`
 --
 ALTER TABLE `slotmachines`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT dla tabeli `training`
+-- AUTO_INCREMENT for table `training`
 --
 ALTER TABLE `training`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT dla tabeli `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT dla tabeli `work`
+-- AUTO_INCREMENT for table `work`
 --
 ALTER TABLE `work`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;

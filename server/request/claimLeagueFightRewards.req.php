@@ -120,7 +120,20 @@ class claimLeagueFightRewards{
 			Core::req()->data['league_division_change'] = "9_8"; // Gold I
 			$player->character->league_group_id = 900000;
 		}			
-		
+
+		$firstLeagueFightCompleted = $player->getCurrentGoalValue('first_league_fight_completed');
+		if ($firstLeagueFightCompleted == 0) {
+			$player->updateCurrentGoalValue('first_league_fight_completed', 1);
+		}
+
+		$leaguePointsReached = $player->getCurrentGoalValue('league_points_reached');
+		if ($leaguePointsReached < $player->character->league_points) {
+			$player->updateCurrentGoalValue('league_points_reached', $player->character->league_points);
+		}
+
+		$leagueFightsCompleted = $player->getCurrentGoalValue('league_fights_completed');
+		$player->updateCurrentGoalValue('league_fights_completed', $leagueFightsCompleted + 1);
+
         //TODO: remove missile item
         //if($player->getItemFromSlot('missiles_item_id') != null)
         //    Core::req()->data += array("items"=>array($player->getItemFromSlot('missiles_item_id')));

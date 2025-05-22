@@ -53,6 +53,7 @@ class buyShopItem{
             else{
                 $player->character->tutorial_flags = '{"first_visit":true,"mission_shown":true,"first_mission":true,"stats_spent":true,"shop_shown":true,"first_item":true,"duel_shown":true,"first_duel":true,"tutorial_finished":true}';
                 $player->givePremium(Config::get('constants.tutorial_finished_premium_currency'));
+				$player->updateCurrentGoalValue('tutorial_completed', 1);
             }
 		}
 		
@@ -63,8 +64,17 @@ class buyShopItem{
 	        $player->givePremium(-$shop_item->buy_price);
 	    else
 	        $player->giveMoney(-$shop_item->buy_price);
-	        
+	    
+
+		$rarity_name = Item::$QUALITY[$shop_item->quality];
+		if ($rarity_name == 'rare' || $rarity_name == 'epic') {
+			$statPointBought = $player->getCurrentGoalValue("{$rarity_name}_item_bought");
+			$player->updateCurrentGoalValue("{$rarity_name}_item_bought", 1);
+		}
+
 	    $player->calculateStats();
+		$player->calculateEquippedItems();
+		
 	    Core::req()->data = array(
 	        'character'=>$player->character,
 	        'inventory'=>["id"=> $player->inventory->id, $target_slotname => $shop_item->id, $shopslot => 0],

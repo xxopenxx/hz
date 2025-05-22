@@ -23,6 +23,17 @@ class DuelBattle extends BaseBattle{
             $this->a_rewards = Utils::rewards($coins, 0, Utils::duelHonorWinReward($this->op1->getHonor(), $this->op2->getHonor()));
             $this->b_rewards = Utils::rewards(0, 0, Utils::duelHonorLostReward($this->op1->getHonor(), $this->op2->getHonor()));
             $this->winner = 'a';
+
+            // Goals
+            $duelsWon = $this->op1->getCurrentGoalValue('duels_won');
+            $this->op1->updateCurrentGoalValue('duels_won', $duelsWon + 1);
+
+            $duelsWonInRow = $this->op1->getCurrentGoalValue('duels_won_in_row');
+            $this->op1->updateCurrentGoalValue('duels_won_in_row', $duelsWonInRow + 1);
+
+            $lostDuels = $this->op2->getCurrentGoalValue('duels_lost');
+            $this->op2->updateCurrentGoalValue('duels_lost', $lostDuels + 1);
+            $this->op2->updateCurrentGoalValue('duels_won_in_row', 0);
         }else{
             $coins = Utils::duelCoinWinReward($this->op1->getLVL());
             if($this->op2->character->guild_id != 0 && ($booster = $this->op2->guild->getBoosters('duel')) != null)
@@ -30,6 +41,18 @@ class DuelBattle extends BaseBattle{
             $this->a_rewards = Utils::rewards(0, 0, Utils::duelHonorLostReward($this->op2->getHonor(), $this->op1->getHonor()));
             $this->b_rewards = Utils::rewards($coins, 0, Utils::duelHonorWinReward($this->op2->getHonor(), $this->op1->getHonor()));
             $this->winner = 'b';
+
+
+            // Goals
+            $duelsWon = $this->op2->getCurrentGoalValue('duels_won');
+            $this->op2->updateCurrentGoalValue('duels_won', $duelsWon + 1);
+
+            $duelsWonInRow = $this->op2->getCurrentGoalValue('duels_won_in_row');
+            $this->op2->updateCurrentGoalValue('duels_won_in_row', $duelsWonInRow + 1);
+
+            $lostDuels = $this->op1->getCurrentGoalValue('duels_lost');
+            $this->op1->updateCurrentGoalValue('duels_lost', $lostDuels + 1);
+            $this->op1->updateCurrentGoalValue('duels_won_in_row', 0);
         }
     }
     

@@ -71,7 +71,14 @@ class washInventoryItem{
                 'stat_dodge_rating'=>$item->stat_dodge_rating
             ]
         );
-        if($usepremium)
+        if($usepremium) {
             Core::req()->data += array('user'=>['id'=>$player->user->id,'premium_currency'=>$player->getPremium()]);
+        }
+
+		$itemWashed = $player->getCurrentGoalValue('item_washed');
+		$player->updateCurrentGoalValue('item_washed', $itemWashed + 1);
+		if (($itemWashed + 1) == 1) {
+			$player->updateCurrentGoalValue('first_item_washed', 1);
+		}
     }
 }

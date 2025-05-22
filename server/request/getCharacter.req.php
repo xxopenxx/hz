@@ -27,5 +27,10 @@ class getCharacter{
 			Core::req()->data += array("requested_character_guild" => $retrievePlayer->guild);
 		if($retrievePlayer->sidekicks)
 			Core::req()->data["requested_character_sidekick"] = $retrievePlayer->sidekicks;
+
+        $playerProfileVisit = $player->getCurrentGoalValue('player_profile_visit');
+        if ($playerProfileVisit == 0) {
+            $player->updateCurrentGoalValue('player_profile_visit', 1);
+        }
     }
 }

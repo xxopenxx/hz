@@ -11,5 +11,9 @@ class syncGame{
             Core::req()->data['missed_duels'] = $missedduels;
         if(($missedleaguefights = $player->getMissedLeagueFights()) != 0)
             Core::req()->data['missed_league_fights'] = $missedleaguefights;
+
+        if ($player->hideout_rooms) {
+            $player->currentCalculatedResourceAmount();
+        }
     }
 }

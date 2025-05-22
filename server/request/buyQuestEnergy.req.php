@@ -37,5 +37,10 @@ class buyQuestEnergy{
 		Core::req()->data = array(
 		    'character'=>$player->character
 		);
+
+        $energyBought = $player->getCurrentGoalValue('energy_bought');
+		if ($energyBought == 0) {
+			$player->updateCurrentGoalValue('energy_bought', 1);
+		}
     }
 }

@@ -21,6 +21,14 @@ class buySenseBooster{
         Core::req()->data = array(
             'character'=>$player->character
         );
+
+        $player->updateCurrentGoalValue('booster_sense_use', 1);
+
+        $currentBooster = $player->getCurrentGoalValue('booster_sense_used');
+        $player->updateCurrentGoalValue('booster_sense_used', $currentBooster + 1);
+
+        $currentBoosterDay = $player->getCurrentGoalValue('booster_sense_used_a_day');
+        $player->updateCurrentGoalValue('booster_sense_used_a_day', $currentBoosterDay + 1);
     }
     
 }

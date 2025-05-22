@@ -97,5 +97,13 @@ class mergeSidekick{
         }
 
         Core::req()->data['character'] = $player->character;
+
+        $firstSidekickMerged = $player->getCurrentGoalValue('first_sidekick_merged');
+        if($firstSidekickMerged == 0) {
+            $player->updateCurrentGoalValue('first_sidekick_merged', 1);
+        }
+
+        $sidekickMerged = $player->getCurrentGoalValue('sidekick_merged');
+        $player->updateCurrentGoalValue('sidekick_merged', $sidekickMerged + 1);
     }
 }

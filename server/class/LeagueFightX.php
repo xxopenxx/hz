@@ -24,6 +24,14 @@ class LeagueFightX extends BaseBattle{
             $this->a_rewards = Utils::rewards($coins, 0, 0, 0, 0, 0, Utils::duelLeagueFightWinReward($this->op1->getLeaguePoints(), $this->op2->getLeaguePoints()));
             $this->b_rewards = Utils::rewards(0, 0, 0, 0, 0, 0, Utils::duelLeaguePointsLostReward($this->op1->getLeaguePoints(), $this->op2->getLeaguePoints()));
             $this->winner = 'a';
+
+            // Goals
+            $leagueFightsWon = $this->op1->getCurrentGoalValue('league_fights_won');
+            $this->op1->updateCurrentGoalValue('league_fights_won', $leagueFightsWon + 1);
+
+            $leagueFightsWonInRow = $this->op1->getCurrentGoalValue('league_fights_won_in_row');
+            $this->op1->updateCurrentGoalValue('league_fights_won_in_row', $leagueFightsWonInRow + 1);
+            $this->op2->updateCurrentGoalValue('league_fights_won_in_row', 0);
         }else{
             $coins = Utils::duelCoinWinReward($this->op1->getLVL());
             if($this->op2->character->guild_id != 0 && ($booster = $this->op2->guild->getBoosters('duel')) != null)
@@ -31,6 +39,8 @@ class LeagueFightX extends BaseBattle{
             $this->a_rewards = Utils::rewards(0, 0, 0, 0, 0, 0, Utils::duelLeaguePointsLostReward($this->op2->getLeaguePoints(), $this->op1->getLeaguePoints()));
             $this->b_rewards = Utils::rewards($coins, 0, 0, 0, 0, 0, Utils::duelLeagueFightWinReward($this->op2->getLeaguePoints(), $this->op1->getLeaguePoints()));
             $this->winner = 'b';
+
+            $this->op1->updateCurrentGoalValue('league_fights_won_in_row', 0);
         }
     }
     

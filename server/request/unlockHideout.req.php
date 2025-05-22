@@ -2,15 +2,16 @@
 namespace Request;
 
 use Srv\Core;
-use Srv\Config;
+use Cls\GameSettings;
 use Schema\Hideout;
 use Cls\Utils;
 
 class unlockHideout{
     
     public function __request($player){
+		$hideout_unlock_min_level = GameSettings::getConstant("hideout_unlock_min_level");
 
-		if($player->character->level < 8)
+		if($player->character->level < $hideout_unlock_min_level)
 			return Core::setError('failed');
 		
 		if($player->hideout)
@@ -20,6 +21,7 @@ class unlockHideout{
         $hideout = new Hideout([
             'character_id'=>$player->character->id
         ]);
+
         $hideout->save();
         $player->hideout = $hideout;
 		

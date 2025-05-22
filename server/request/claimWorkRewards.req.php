@@ -17,13 +17,16 @@ class claimWorkRewards{
         $player->work->remove();
         $player->character->active_work_id = 0;
 
-
         Core::req()->data = array(
             'character'=>$player->character,
             'work'=>array('id'=>$player->work->id, 'status'=>4)
         );
 
-        if($player->inventory->sidekick_id)
+        if($player->inventory->sidekick_id) {
             Core::req()->data['sidekick'] = $player->sidekicks;
+        }
+
+		$timeWorked = $player->getCurrentGoalValue('time_worked');
+		$player->updateCurrentGoalValue('time_worked', $timeWorked + $player->work->duration);
     }
 }

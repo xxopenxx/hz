@@ -24,5 +24,11 @@ class sellBankInventoryItem{
 		    'character'=>$player->character,
 		    'bank_inventory'=>['id'=>$player->bankinv->id, $bank_source_slot=>0]
 		);
+
+        $itemSold = $player->getCurrentGoalValue('item_sold');
+        if ($itemSold == 0) {
+            $player->updateCurrentGoalValue('item_sold', 1);
+        }
+        
     }
 }

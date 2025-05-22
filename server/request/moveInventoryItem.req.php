@@ -52,6 +52,8 @@ class moveInventoryItem{
         $player->setItemInInventory($source_item, $target_slotname);
         
         $player->calculateStats();
+        $player->calculateEquippedItems();
+        
         Core::req()->data = array(
             'character'=>$player->character,
             'inventory'=>[

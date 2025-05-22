@@ -53,6 +53,11 @@ class retrieveLeaderboard{
                 else*/ if(is_numeric($c)) $c = intval($c);
             }
         }
+
+        $leaderboardVisit = $player->getCurrentGoalValue('leaderboard_visit');
+        if ($leaderboardVisit == 0) {
+            $player->updateCurrentGoalValue('leaderboard_visit', 1);
+        }
         
         Core::req()->data = array(
             'character'=>[],

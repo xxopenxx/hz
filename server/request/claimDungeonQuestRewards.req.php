@@ -37,11 +37,19 @@ class claimDungeonQuestRewards{
                     $dungeon->status = 4;
                     $dungeon->ts_last_complete = time();
                 } else {
+                    // dungeon1_normal_completed
+
+                    $mode = $dungeon->mode == 0 ? 'normal' : 'hard';
+                    $dungeonCompleted = $player->getCurrentGoalValue("{$dungeon->identifier}_{$mode}_completed");
+                    if ($dungeonCompleted == 0) {
+                        $player->updateCurrentGoalValue("{$dungeon->identifier}_{$mode}_completed", 1);
+                    }
+
                     $dungeon->mode++; //increase mode (difficulty)
                 }
             }
 
-            if($dungeon_status != 4) { //if dungeon isnt closed yet, generate new dungeon quest 
+            if($dungeon->status != 4) { //if dungeon isnt closed yet, generate new dungeon quest 
                 $dungeon->current_dungeon_quest_id = $player->generateQuestAtDungeon($dungeon->id, $dungeon_number, $dungeon->progress_index, $dungeon->mode);
             }
         } else {

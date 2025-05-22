@@ -61,6 +61,9 @@ class startDuel{
             $player->givePremium(Config::get('constants.tutorial_finished_premium_currency'));
         }
         
+        $startDuelToday = $player->getCurrentGoalValue('duels_started_a_day');
+        $player->updateCurrentGoalValue('duels_started_a_day', $startDuelToday + 1);
+
         Core::req()->data = array(
             "user" => $use_premium?$player->user:[],
 			"character" => $player->character,

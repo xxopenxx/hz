@@ -6,11 +6,13 @@ use Srv\Config;
 class GameSettings{
 	
 	public static function getConstant($path){
-		return array_path_get($path, static::returnConstants());
+		$constants = static::returnConstants();
+		return array_path_get($path, $constants);
 	}
 	
 	public static function getTextures($path){
-		return array_path_get($path, static::returnTextures());
+		$textures = static::returnTextures();
+		return array_path_get($path, $textures);
 	}
 
 	public static function returnTextures(){

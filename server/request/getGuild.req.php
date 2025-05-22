@@ -66,5 +66,10 @@ class getGuild{
 			],
 			"requested_guild_members" => $guild->getMembers()
 		);
+
+        $guildVisited = $player->getCurrentGoalValue('guild_visited');
+        if ($guildVisited == 0) {
+            $player->updateCurrentGoalValue('guild_visited', 1);
+        }
     }
 }
