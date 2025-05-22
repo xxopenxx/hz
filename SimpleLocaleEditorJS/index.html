@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMF Locale Editor</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Pako compression library -->
+    <script src="https://cdn.jsdelivr.net/npm/pako@2.0.4/dist/pako.min.js"></script>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2>AMF Locale Editor</h2>
+    
+    <div class="card mb-4">
+        <div class="card-header">
+            Process Locale File
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label for="fileInput">Select file:</label>
+                <input type="file" class="form-control-file" id="fileInput">
+            </div>
+            <div class="form-group">
+                <label for="typeSelect">Choose Processing Type:</label>
+                <select class="form-control" id="typeSelect">
+                    <option value="gzip">GZIP Only (locales from flash_123 or html5)</option>
+                    <option value="gzip_amf3">GZIP + AMF3 (SWF versions newer than flash_123)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="actionSelect">Choose Action:</label>
+                <select class="form-control" id="actionSelect">
+                    <option value="decompress">Decompress to JSON</option>
+                    <option value="compress">Compress from JSON</option>
+                </select>
+            </div>
+            <button id="processBtn" class="btn btn-primary">Process</button>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="resultArea">Result:</label>
+                <textarea class="form-control" id="resultArea" rows="15"></textarea>
+            </div>
+            <button id="downloadBtn" class="btn btn-success" disabled>Download Result</button>
+        </div>
+    </div>
+</div>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

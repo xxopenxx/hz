@@ -17,6 +17,7 @@ use Schema\Sidekicks;
 use Schema\Hideout;
 use Schema\HideoutRoom;
 use Schema\Items;
+use Schema\GoalItems;
 use Schema\Work;
 use Schema\Training;
 use Schema\Battle;
@@ -26,6 +27,11 @@ use Schema\Messages;
 use Cls\GameSettings;
 use Cls\Bonus\SlotMachine;
 use Cls\Bonus\ResourceType;
+use Cls\Utils\HideoutUtils;
+
+// for goals
+use Srv\DB;
+use PDO;
 
 class Player extends Entity{
 
@@ -43,6 +49,9 @@ class Player extends Entity{
 	public $hideout = null;
 	public $hideout_room = null;
 	public $hideout_rooms = [];
+
+    public $current_goal_values = [];
+    public $collected_goals = [];
     //
     public $items = [];
     public $quests = [];
@@ -127,6 +136,15 @@ class Player extends Entity{
                 $this->character->ts_active_sense_boost_expires = 0;
             $this->calculateStats();
             $this->calculateEntity();
+        }
+
+        if ($this->hideout_rooms) {
+            $this->currentCalculatedResourceAmount();
+        }
+
+        if ($this->character) {
+            $this->checkCurrentGoalValues();
+            $this->checkCollectedGoals();
         }
     }
     
@@ -270,12 +288,32 @@ class Player extends Entity{
     
     public function getDailyBonuses(){
         $dateDiff = Utils::diffDate($this->character->ts_last_daily_login_bonus);
+
+        // Reset daily goals
+        if ($dateDiff < 0) {
+            $this->updateCurrentGoalValue('coins_spent_a_day', 0);
+            $this->updateCurrentGoalValue('duels_started_a_day', 0);
+            $this->updateCurrentGoalValue('shop_refreshed_a_day', 0);
+            $this->updateCurrentGoalValue('quest_refreshed_a_day', 0);
+            $this->updateCurrentGoalValue('booster_sense_used_a_day', 0);
+            $this->updateCurrentGoalValue('league_fights_started_a_day', 0);
+        }
+
         if($dateDiff == -1){ //Yesterday -1 day
             $this->character->daily_login_bonus_day++;
             $this->character->ts_last_daily_login_bonus = time();
+
+            $daysLoggedIn = $this->getCurrentGoalValue('days_logged_in');
+            $this->updateCurrentGoalValue('days_logged_in', $daysLoggedIn + 1);
+
+            if (($daysLoggedIn + 1) == 2) {
+                $this->updateCurrentGoalValue('second_day_logged_in', 2);
+            }
         }else if($dateDiff < -1){ //-x days
             $this->character->daily_login_bonus_day = 1;
             $this->character->ts_last_daily_login_bonus = time();
+
+            $this->updateCurrentGoalValue('days_logged_in', 0);
         }else
             return FALSE;
         //Get bonuses
@@ -328,6 +366,12 @@ class Player extends Entity{
     
     public function giveMoney($money){
         $this->character->game_currency += $money;
+
+        if ($money < 0) {
+            $spentMoneyToday = $this->getCurrentGoalValue('coins_spent_a_day');
+            $spentMoneyToday += abs($money);
+            $this->updateCurrentGoalValue('coins_spent_a_day', $spentMoneyToday);
+        }
     }
     
     public function setMoney($money){
@@ -342,6 +386,12 @@ class Player extends Entity{
         $this->user->premium_currency += $prem;
         if(Core::$PLAYER->user->id == $this->user->id)
             Core::req()->append['user']= $this->user;
+
+        if ($prem < 0) {
+            $donutsSpent = $this->getCurrentGoalValue('donuts_spent');
+            $donutsSpent += abs($prem);
+            $this->updateCurrentGoalValue('donuts_spent', $donutsSpent);
+        }
     }
     
     public function setPremium($prem){
@@ -360,6 +410,12 @@ class Player extends Entity{
         $this->character->honor += $h;
         if($this->character->honor < 0)
             $this->character->honor = 0;
+
+        $honorReached = $this->getCurrentGoalValue('honor_reached');
+        if ($honorReached < $this->character->honor) {
+            $honorReached = $this->character->honor;
+            $this->updateCurrentGoalValue('honor_reached', $honorReached);
+        }
     }
 
     public function giveLeaguePoints($h){
@@ -403,6 +459,33 @@ class Player extends Entity{
         return $this->character->level;
     }
     
+    // Hideout
+    public function giveHideoutGlue($glue) {
+        $this->hideout->current_resource_glue += $glue;
+        if ($this->hideout->current_resource_glue < 0) {
+            $this->hideout->current_resource_glue = 0;
+        }
+
+        $hideoutGlueCollected = $this->getCurrentGoalValue('hideout_glue_collected');
+        if ($hideoutGlueCollected < $this->hideout->current_resource_glue) {
+            $hideoutGlueCollected = $this->hideout->current_resource_glue;
+            $this->updateCurrentGoalValue('hideout_glue_collected', $hideoutGlueCollected);
+        }
+    }
+
+    public function giveHideoutStone($stone) {
+        $this->hideout->current_resource_stone += $stone;
+        if ($this->hideout->current_resource_stone < 0) {
+            $this->hideout->current_resource_stone = 0;
+        }
+
+        $hideoutStoneCollected = $this->getCurrentGoalValue('hideout_stone_collected');
+        if ($hideoutStoneCollected < $this->hideout->current_resource_stone) {
+            $hideoutStoneCollected = $this->hideout->current_resource_stone;
+            $this->updateCurrentGoalValue('hideout_stone_collected', $hideoutStoneCollected);
+        }
+    }
+
     public function regenerateSometime(){
         //Store, refil quest energy
         $this->character->current_energy_storage = min($this->character->current_energy_storage + $this->character->quest_energy, $this->maximumEnergyStorage());
@@ -473,6 +556,16 @@ class Player extends Entity{
         //
         if($this->sidekicks->level != $newLVL){
             $this->sidekicks->level = $newLVL;
+
+            if ($this->sidekicks->level == $maxlevels) {
+                $firstSidekickMaxed = $this->getCurrentGoalValue('first_sidekick_maxed');
+                if ($firstSidekickMaxed == 0) {
+                    $this->updateCurrentGoalValue('first_sidekick_maxed', 1);
+                }
+
+                $sidekickMaxed = $this->getCurrentGoalValue('sidekick_maxed');
+                $this->updateCurrentGoalValue('sidekick_maxed', $sidekickMaxed + 1);
+            }
         }
     }
 
@@ -492,9 +585,10 @@ class Player extends Entity{
         if($newLVL > $this->character->level)
             $this->character->stat_points_available += ($newLVL - $this->character->level) * Config::get('constants.level_up_stat_points');
 		//
-        if($this->character->level != $newLVL){
+
+        if($this->character->level != $newLVL) {
             $this->character->level = $newLVL;
-            //
+            
             $max_stages = $this->character->max_quest_stage;
     		$unlock_stage = $this->calculateStages();
     		if($unlock_stage > $max_stages){
@@ -509,7 +603,7 @@ class Player extends Entity{
 				$player->setExp(Config::get("constants.levels.$lvl.xp"));
 			}
 
-            if($this->character->level == 60) {
+            if($this->character->level == 60 && !$this->character->received_sidekick) {
                 $skills = randomSidekickSkills();
                 $q = new Sidekicks([
                     'character_id'=>$this->character->id,
@@ -532,8 +626,19 @@ class Player extends Entity{
                 $sidekick_data = array();
                 $sidekick_data[] = $q->id;
                 $this->character->received_sidekick = 1;
+
+                if(!$this->inventory) {
+                    $this->inventory = Inventory::find(function($q){ $q->where('character_id', $this->character->id); });
+                }
+
                 $this->inventory->sidekick_data = json_encode(array("orders" => $sidekick_data));
+                $this->updateCurrentGoalValue('first_sidekick_collected', 1);
+                $this->updateCurrentGoalValue('sidekick_collected', 1);
             }
+
+            // Goals
+            $this->updateCurrentGoalValue('level_reached', $this->character->level);
+            $this->updateCurrentGoalValue('stage_reached', $this->character->max_quest_stage);
         }
     }
     
@@ -646,6 +751,37 @@ class Player extends Entity{
     
     public function getItemFromBankSlot($slotname){
         return $this->getItemById($this->bankinv->{$slotname});
+    }
+
+    public function getFreeInventorySlot() {
+        for ($i=1; $i <= 18; $i++) {
+            $slotname = "bag_item{$i}_id";
+            if ($this->getItemFromSlot($slotname) == null)
+                return $slotname;
+        }
+
+        return null;
+    }
+
+    public function getFreeBankInventorySlot() {
+        $maxBankInv = $this->bankinv->max_bank_index;
+        $maxSlot = ($maxBankInv + 1) * 18;
+        for ($i=1; $i <= $maxSlot; $i++) {
+            $slotname = "bank_item{$i}_id";
+            if ($this->getItemFromBankSlot($slotname) == null)
+                return $slotname;
+        }
+        return null;
+    }
+
+    public function getFreeInvSlot() {
+        $inventorySlot = $this->getFreeInventorySlot();
+        if ($inventorySlot) return $inventorySlot;
+
+        $bankInventorySlot = $this->getFreeBankInventorySlot();
+        if ($bankInventorySlot) return $bankInventorySlot;
+
+        return null;
     }
     
     public function removeItem($item){
@@ -793,6 +929,10 @@ class Player extends Entity{
         $flags = json_decode($this->character->tutorial_flags, true);
         $flags[$flag] = $val;
         $this->character->tutorial_flags = json_encode($flags);
+
+        if ($flag == 'tutorial_finished') {
+            $this->updateCurrentGoalValue('tutorial_completed', 1);
+        }
     }
     
     public function getTutorialFlag($flag){
@@ -812,7 +952,8 @@ class Player extends Entity{
         $this->character->stat_total_strength = ceil($this->character->stat_base_strength * $boosterVal);
         $this->character->stat_total_critical_rating = ceil($this->character->stat_base_critical_rating * $boosterVal);
         $this->character->stat_total_dodge_rating = ceil($this->character->stat_base_dodge_rating * $boosterVal);
-        for($i=1; $i <= 8; $i++){
+        
+        for($i=1; $i <= 8; $i++) {
             $slot = \Cls\Utils\Item::$TYPE[$i].'_item_id';
             $item = $this->getItemFromSlot($slot);
             if($item == null) continue;
@@ -822,6 +963,7 @@ class Player extends Entity{
             $this->character->stat_total_dodge_rating += $item->stat_dodge_rating;
             $this->character->stat_weapon_damage += $item->stat_weapon_damage;
         }
+
         //var_dump($this->inventory->sidekick_id);
         if($this->inventory->sidekick_id > 0 && $this->sidekicks){
             //var_dump($this->sidekicks);
@@ -908,5 +1050,95 @@ class Player extends Entity{
             $players[] = $player;
         }
         return $players;
+    }
+
+    public function calculateEquippedItems() {
+        $equippedCount = 0;
+        for($i=1; $i <= 8; $i++) {
+            $slot = \Cls\Utils\Item::$TYPE[$i].'_item_id';
+            $item = $this->getItemFromSlot($slot);
+            if($item == null) continue;
+            if ($i < 8) $equippedCount++;
+        }
+
+        $characterFullEquipped = $this->getCurrentGoalValue('character_full_equipped');
+        if ($characterFullEquipped == 0) {
+            if ($equippedCount == 7) $this->updateCurrentGoalValue('character_full_equipped', 1);
+        }
+    }
+
+    // Hideout
+    public function currentCalculatedResourceAmount() {
+        foreach ($this->hideout_rooms as $room) {
+            $calculated = HideoutUtils::currentCalculatedResourceAmount($room);
+            if ($room->current_resource_amount != $calculated) {
+                $room->current_resource_amount = $calculated;
+                $room->ts_last_resource_change = time();
+            }
+        }
+    }
+
+    // Goals
+    public function checkCurrentGoalValues() {
+		$goals = GameSettings::getConstant('goals');
+
+        $checkGoal = false;
+        if (isset($value['required_goal']) && !empty($value['required_goal'])) {
+            $checkGoal = true;
+        }
+
+		foreach ($goals as $key => $value) {
+            $goalMeet = true;
+            if ($checkGoal) {
+                $exists = DB::sql("SELECT * FROM `current_goal_values` WHERE `character_id` = {$this->character->id} AND `identifier` = {$value['required_goal']}")->fetch(PDO::FETCH_ASSOC);
+                if ($exists['count']) {
+                    $goalMeet = false;
+                }
+            }
+
+			if ($goalMeet && $value['required_level'] <= $this->character->level) {
+				$exists = DB::sql("SELECT COUNT(*) as count FROM `current_goal_values` WHERE `character_id` = {$this->character->id} AND `identifier` = '$key'")->fetch(PDO::FETCH_ASSOC);
+				if ($exists['count'] == 0) {
+					DB::sql("INSERT INTO `current_goal_values`(`character_id`, `identifier`, `value`, `current_value`) VALUES ({$this->character->id}, '$key', 0, 0)");
+				}
+			}
+		}
+
+		$x = DB::sql("SELECT * FROM `current_goal_values` WHERE `character_id` = {$this->character->id}")->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($x as $goal) {
+            $this->current_goal_values[$goal['identifier']] = [
+                    'value' => $goal['value'],
+                    'current_value' => $goal['current_value']
+            ];
+        }
+    }
+
+    public function checkCollectedGoals() {
+        $x = DB::sql("SELECT * FROM `collected_goals` WHERE `character_id` = {$this->character->id}")->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($x as $goal) {
+            $this->collected_goals[] = [
+                $goal['identifier'] => [
+                    'value' => $goal['value'],
+                    'date' => $goal['date']
+                ]
+            ];
+        }
+    }
+
+    public function updateCurrentGoalValue($identifier, $value) {
+        DB::sql("UPDATE current_goal_values SET `value` = ?, `current_value` = ? WHERE `identifier` = ? AND `character_id` = ?", 
+        [$value, $value, $identifier, $this->character->id]);
+
+        Core::req()->append['current_goal_values'][$identifier] = [
+            'value' => $value,
+            'current_value' => $value
+        ];
+    }
+
+    public function getCurrentGoalValue($identifier) {
+        if (isset($this->current_goal_values[$identifier])) {
+            return $this->current_goal_values[$identifier]['current_value'];
+        }
+        return 0;
     }
 }
