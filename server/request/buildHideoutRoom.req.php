@@ -6,28 +6,38 @@ use Srv\Config;
 use Schema\HideoutRoom;
 use Cls\GameSettings;
 use Cls\Utils\HideoutUtils;
+use Srv\Debug;
 
 
 class buildHideoutRoom {
     public function __request($player) {
         $identifier = getField('identifier', FIELD_IDENTIFIER);
+        Debug::add(['buildHideoutRoom_start', 'player_id' => $player->character->id, 'identifier' => $identifier, 'level_slot' => $level, 'slot_pos' => $slot]);
         $level = (int) getField('level', FIELD_NUM);
         $slot = (int) getField('slot', FIELD_NUM);
         $time = time();
 
-        if (!$player->hideout) 
+        if (!$player->hideout) {
+            Debug::add(['buildHideoutRoom_error', 'error_code' => 'errHideoutNotFound', 'player_id' => $player->character->id]);
 			return Core::setError('errHideoutNotFound');
+        }
 
-        if (!$identifier) 
+        if (!$identifier) {
+            Debug::add(['buildHideoutRoom_error', 'error_code' => 'errInvalidIdentifier', 'player_id' => $player->character->id]);
 			return Core::setError('errInvalidIdentifier');
+        }
 
-        if ($player->hideout->idle_worker_count <= 0)
+        if ($player->hideout->idle_worker_count <= 0) {
+            Debug::add(['buildHideoutRoom_error', 'error_code' => 'errHideoutNoIdleWorker', 'player_id' => $player->character->id]);
             return Core::setError('errHideoutNoIdleWorker');
+        }
 
         $roomConfig = GameSettings::getConstant("hideout_rooms.{$identifier}");
 
-        if (!$roomConfig) 
+        if (!$roomConfig) {
+            Debug::add(['buildHideoutRoom_error', 'error_code' => 'errInvalidRoomConfig', 'player_id' => $player->character->id]);
 			return Core::setError('errInvalidRoomConfig');
+        }
 
         $roomCount = 0;
         foreach ($player->hideout_rooms as $r) {
@@ -35,6 +45,7 @@ class buildHideoutRoom {
         }
 
         if ($roomCount >= $roomConfig['limit']) {
+            Debug::add(['buildHideoutRoom_error', 'error_code' => 'errRoomLimitReached', 'player_id' => $player->character->id]);
             return Core::setError('errRoomLimitReached');
         }
 
@@ -43,6 +54,7 @@ class buildHideoutRoom {
             $currentSlot = $slot + $i;
             $slotKey = $slotKeyBase . $currentSlot;
             if ($player->hideout->{$slotKey} != 0) {
+                Debug::add(['buildHideoutRoom_error', 'error_code' => 'errSlotsNotAvailable', 'player_id' => $player->character->id]);
                 return Core::setError('errSlotsNotAvailable');
             }
         }
@@ -77,24 +89,29 @@ class buildHideoutRoom {
 		if ($identifier != 'main_building') {
 			$requiredLevel = $roomConfig["unlock_with_mainbuilding_" . ($roomCount + 1)] ?? 0;
 			if (!$mainBuilding || ($mainBuilding->level < $requiredLevel) || $isMainInStore) {
+                Debug::add(['buildHideoutRoom_error', 'error_code' => 'errMainBuildingLevelTooLow', 'player_id' => $player->character->id]);
 				return Core::setError('errMainBuildingLevelTooLow');
 			}
 		}
 
 		$price = $roomConfig['levels'][1];
 		if (!$price) {
+            Debug::add(['buildHideoutRoom_error', 'error_code' => 'errInvalidRoomLevel', 'player_id' => $player->character->id]);
 			return Core::setError('errInvalidRoomLevel');
 		}
 
+        Debug::add(['buildHideoutRoom_resource_check', 'hideout_id' => $player->hideout->id, 'needed_glue' => $price['price_glue'], 'needed_stone' => $price['price_stone'], 'needed_gold' => $price['price_gold']]);
         if ($player->hideout->current_resource_glue < $price['price_glue'] ||
             $player->hideout->current_resource_stone < $price['price_stone'] ||
             $player->character->game_currency < $price['price_gold']) {
+            Debug::add(['buildHideoutRoom_error', 'error_code' => 'errNotEnoughResources', 'player_id' => $player->character->id]);
             return Core::setError('errNotEnoughResources');
         }
 
         $player->hideout->current_resource_glue -= $price['price_glue'];
         $player->hideout->current_resource_stone -= $price['price_stone'];
         $player->giveMoney(-$price['price_gold']);
+        Debug::add(['buildHideoutRoom_resource_deducted', 'hideout_id' => $player->hideout->id, 'new_glue' => $player->hideout->current_resource_glue, 'new_stone' => $player->hideout->current_resource_stone]);
 
         $buildTime = 60 * $price['build_time'];
         $newRoom = new HideoutRoom([
@@ -105,7 +122,9 @@ class buildHideoutRoom {
             'ts_creation' => $time,
             'ts_activity_end' => $time + $buildTime
         ]);
+        Debug::add(['buildHideoutRoom_presave_room', 'hideout_id' => $player->hideout->id, 'room_data' => $newRoom->getData()]);
         $newRoom->save();
+        Debug::add(['buildHideoutRoom_postsave_room', 'hideout_id' => $player->hideout->id, 'room_id' => $newRoom->id]);
 
         $slotUpdates = [];
         for ($i = 0; $i < $roomConfig['size']; $i++) {
@@ -116,6 +135,9 @@ class buildHideoutRoom {
         }
 
         $player->hideout->idle_worker_count -= 1;
+        Debug::add(['buildHideoutRoom_presave_hideout', 'hideout_id' => $player->hideout->id, 'hideout_data' => $player->hideout->getData()]);
+        $player->hideout->save();
+        Debug::add(['buildHideoutRoom_postsave_hideout', 'hideout_id' => $player->hideout->id]);
 
         Core::req()->data = [
             'user' => $player->user,
