@@ -1168,6 +1168,12 @@ return [
             	698=>['xp'=>886152162,'rank'=>141],
             	699=>['xp'=>890474059,'rank'=>141],
             ],
+
+            // Hideout Battles
+            "hideout_opponent_refresh_cooldown_seconds" => 3600,
+            "max_hideout_opponent_history" => 10,
+            "min_hideout_attacker_units" => 1,
+
             "quest_max_stage"=>13,
             "stages"=>[
             	1=>[
