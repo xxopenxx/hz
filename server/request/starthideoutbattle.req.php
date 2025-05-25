@@ -5,7 +5,7 @@ use Srv\Core;
 use Srv\Config;
 // Ensure Schema\Hideout, Schema\HideoutBattle, Schema\Character, Cls\Player are available
 
-class starthideoutbattle {
+class startHideoutBattle {
     public function __request($player) {
         // Step 1: Load Player's Data & Initial Checks
         $player_hideout = \Schema\Hideout::find(function($q) use ($player) {

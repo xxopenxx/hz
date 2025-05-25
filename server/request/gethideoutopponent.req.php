@@ -6,7 +6,7 @@ use Srv\Config;
 // Ensure Schema\Hideout, Schema\Character, Cls\Player are available
 // either via autoloader or explicit require_once if not already handled.
 
-class gethideoutopponent {
+class getHideoutOpponent {
     public function __request($player) {
         // Step 1: Load player's hideout
         $player_hideout = \Schema\Hideout::find(function($q) use ($player) {
