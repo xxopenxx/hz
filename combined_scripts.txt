@@ -1,0 +1,2911 @@
+--- SymbolButtonWorldbossEvent.as ---
+
+package
+{
+   import flash.display.MovieClip;
+   import flash.text.TextField;
+   
+   [Embed(source="/_assets/assets.swf", symbol="symbol3569")]
+   public dynamic class SymbolButtonWorldbossEvent extends MovieClip
+   {
+      
+      public var progress:SymbolBattleHitpointBar;
+      
+      public var questGraphic:SymbolWorldbossEventGraphic;
+      
+      public var txtTimeLeft:TextField;
+      
+      public function SymbolButtonWorldbossEvent()
+      {
+         super();
+      }
+   }
+}
+
+
+
+--- End of SymbolButtonWorldbossEvent.as ---
+
+--- SymbolDialogWorldbossAttackComplete.as ---
+
+package
+{
+   import flash.display.MovieClip;
+   import flash.text.TextField;
+   
+   [Embed(source="/_assets/assets.swf", symbol="symbol759")]
+   public dynamic class SymbolDialogWorldbossAttackComplete extends MovieClip
+   {
+      
+      public var btnClose:SymbolUiButtonDefault;
+      
+      public var dialogBackground:SymbolBackgroundFrameYellowRounded;
+      
+      public var progress:SymbolBattleHitpointBar;
+      
+      public var txtAttackCountOwn:TextField;
+      
+      public var txtAttackCountTotal:TextField;
+      
+      public var txtDamageTotal:TextField;
+      
+      public var txtDialogTitle:TextField;
+      
+      public var txtHitpoints:TextField;
+      
+      public var txtInfo:TextField;
+      
+      public function SymbolDialogWorldbossAttackComplete()
+      {
+         super();
+      }
+   }
+}
+
+
+
+--- End of SymbolDialogWorldbossAttackComplete.as ---
+
+--- SymbolDialogWorldbossEventComplete.as ---
+
+package
+{
+   import flash.display.MovieClip;
+   import flash.text.TextField;
+   
+   [Embed(source="/_assets/assets.swf", symbol="symbol741")]
+   public dynamic class SymbolDialogWorldbossEventComplete extends MovieClip
+   {
+      
+      public var btnClose:SymbolUiButtonDefault;
+      
+      public var dialogBackground:SymbolBackgroundFrameYellowRounded;
+      
+      public var iconCoins:SymbolIconCoins;
+      
+      public var iconTop:SymbolIconCharacter;
+      
+      public var iconWinningStrike:SymbolIconCharacter;
+      
+      public var iconXp:SymbolIconXp;
+      
+      public var itemReward:SymbolItemSlot;
+      
+      public var npcPicture:SymbolNPCPicture;
+      
+      public var reward1:SymbolWorldbossReward;
+      
+      public var reward2:SymbolWorldbossReward;
+      
+      public var rewardBackground:SymbolBackgroundTextBrown;
+      
+      public var sidekickReward:SymbolItemSlot;
+      
+      public var txtAttackCountOwn:TextField;
+      
+      public var txtAttackCountTotal:TextField;
+      
+      public var txtCoins:TextField;
+      
+      public var txtDamageTotal:TextField;
+      
+      public var txtDefeated:TextField;
+      
+      public var txtDialogTitle:TextField;
+      
+      public var txtFled:TextField;
+      
+      public var txtNoRewardText:TextField;
+      
+      public var txtNpcName:TextField;
+      
+      public var txtRewardsCaption:TextField;
+      
+      public var txtStatisticCaption:TextField;
+      
+      public var txtTopAttacks:TextField;
+      
+      public var txtTopCaption:TextField;
+      
+      public var txtWinningStrike:TextField;
+      
+      public var txtXp:TextField;
+      
+      public function SymbolDialogWorldbossEventComplete()
+      {
+         super();
+      }
+   }
+}
+
+
+
+--- End of SymbolDialogWorldbossEventComplete.as ---
+
+--- SymbolDialogWorldbossEventInfo.as ---
+
+package
+{
+   import flash.display.MovieClip;
+   import flash.text.TextField;
+   
+   [Embed(source="/_assets/assets.swf", symbol="symbol711")]
+   public dynamic class SymbolDialogWorldbossEventInfo extends MovieClip
+   {
+      
+      public var btnClose:SymbolUiButtonDefault;
+      
+      public var dialogBackground:SymbolBackgroundFrameYellowRounded;
+      
+      public var phone:SymbolWorldbossEventPhone;
+      
+      public var txtCallerName:TextField;
+      
+      public var txtDialogTitle:TextField;
+      
+      public var txtInfo:TextField;
+      
+      public var txtRewards:TextField;
+      
+      public function SymbolDialogWorldbossEventInfo()
+      {
+         super();
+      }
+   }
+}
+
+
+
+--- End of SymbolDialogWorldbossEventInfo.as ---
+
+--- SymbolWorldbossAttackBriefingContent.as ---
+
+package
+{
+   import flash.display.MovieClip;
+   import flash.text.TextField;
+   
+   [Embed(source="/_assets/assets.swf", symbol="symbol1231")]
+   public dynamic class SymbolWorldbossAttackBriefingContent extends MovieClip
+   {
+      
+      public var iconCoins:SymbolIconCoins;
+      
+      public var iconDuration:SymbolIconDuration;
+      
+      public var iconItem:SymbolIconGift;
+      
+      public var iconTopPoolItem:SymbolItemRewardIcon;
+      
+      public var iconTopRankItem:SymbolItemRewardIcon;
+      
+      public var iconXp:SymbolIconXp;
+      
+      public var npcPicture:SymbolNPCPicture;
+      
+      public var progress:SymbolBattleHitpointBar;
+      
+      public var reward1:SymbolWorldbossReward;
+      
+      public var reward2:SymbolWorldbossReward;
+      
+      public var txtCoins:TextField;
+      
+      public var txtDuration:TextField;
+      
+      public var txtNpcName:TextField;
+      
+      public var txtRequirementsCaption:TextField;
+      
+      public var txtRewardOther:TextField;
+      
+      public var txtRewardTop1:TextField;
+      
+      public var txtRewardTop10:TextField;
+      
+      public var txtRewardsCaption:TextField;
+      
+      public var txtTimeLeft:TextField;
+      
+      public var txtTitle:TextField;
+      
+      public var txtXp:TextField;
+      
+      public function SymbolWorldbossAttackBriefingContent()
+      {
+         super();
+      }
+   }
+}
+
+
+
+--- End of SymbolWorldbossAttackBriefingContent.as ---
+
+--- SymbolWorldbossEventGraphic.as ---
+
+package
+{
+   import flash.display.MovieClip;
+   
+   [Embed(source="/_assets/assets.swf", symbol="symbol3567")]
+   public dynamic class SymbolWorldbossEventGraphic extends MovieClip
+   {
+      
+      public var clickLayerDescription:SymbolDummy;
+      
+      public var npcIcon:SymbolPlaceholder;
+      
+      public function SymbolWorldbossEventGraphic()
+      {
+         super();
+      }
+   }
+}
+
+
+
+--- End of SymbolWorldbossEventGraphic.as ---
+
+--- SymbolWorldbossEventPhone.as ---
+
+package
+{
+   import flash.display.MovieClip;
+   
+   [Embed(source="/_assets/assets.swf", symbol="symbol706")]
+   public dynamic class SymbolWorldbossEventPhone extends MovieClip
+   {
+      
+      public function SymbolWorldbossEventPhone()
+      {
+         super();
+      }
+   }
+}
+
+
+
+--- End of SymbolWorldbossEventPhone.as ---
+
+--- SymbolWorldbossReward.as ---
+
+package
+{
+   import flash.display.MovieClip;
+   import flash.text.TextField;
+   
+   [Embed(source="/_assets/assets.swf", symbol="symbol731")]
+   public dynamic class SymbolWorldbossReward extends MovieClip
+   {
+      
+      public var iconQuestEnergy:SymbolIconEnergy;
+      
+      public var iconTrainingSessions:SymbolIconTrainingSessions;
+      
+      public var txtValue:TextField;
+      
+      public function SymbolWorldbossReward()
+      {
+         super();
+      }
+   }
+}
+
+
+
+--- End of SymbolWorldbossReward.as ---
+
+--- com\playata\application\data\worldboss\WorldbossAttack.as ---
+
+package com.playata.application.data.worldboss
+{
+   import com.playata.application.data.battle.Battle;
+   import com.playata.application.data.character.Character;
+   import com.playata.application.data.guild.Guild;
+   import com.playata.application.data.quest.DurationEvent;
+   import com.playata.application.main.GameUtil;
+   import com.playata.application.ui.ViewManager;
+   import com.playata.framework.core.config.Constants;
+   import com.playata.framework.core.util.TimeUtil;
+   import com.playata.framework.data.DataObject;
+   
+   public class WorldbossAttack extends DataObject implements DurationEvent
+   {
+      
+      private var _battle:Battle = null;
+      
+      private var _previousAttackers:Vector.<String> = new Vector.<String>();
+      
+      public function WorldbossAttack(param1:Object = null)
+      {
+         super(param1);
+      }
+      
+      public static function get eventDuration() : int
+      {
+         var _loc1_:int = Constants.instance.constant("quest_duration_short") as int;
+         var _loc4_:Character = ViewManager.instance.user.character;
+         var _loc2_:Guild = _loc4_.guild;
+         var _loc6_:int = _loc4_.level;
+         var _loc3_:int = Constants.instance.constant("quest_level_full_duration") as int;
+         if(_loc6_ < _loc3_)
+         {
+            _loc1_ *= _loc6_ / _loc3_;
+         }
+         if(_loc2_)
+         {
+            _loc1_ *= 1 - _loc4_.activeQuestBoosterAmount / 100 - _loc2_.activeQuestBoosterAmount / 100;
+         }
+         else
+         {
+            _loc1_ *= 1 - _loc4_.activeQuestBoosterAmount / 100;
+         }
+         var _loc5_:int = Math.round(_loc1_);
+         return GameUtil.roundDuration(_loc5_);
+      }
+      
+      public function refreshBattle(param1:Object) : void
+      {
+         if(_battle == null || param1.id !== undefined && _battle.id != param1.id)
+         {
+            _battle = new Battle(param1);
+         }
+         else
+         {
+            _battle.setData(param1);
+         }
+      }
+      
+      public function refreshPreviousAttackers(param1:Object) : void
+      {
+         _previousAttackers = new Vector.<String>();
+         for each(var _loc2_ in param1)
+         {
+            _previousAttackers.push(_loc2_);
+         }
+      }
+      
+      public function get previousAttackers() : Vector.<String>
+      {
+         return _previousAttackers;
+      }
+      
+      public function getAllPreviousAttackerNames() : String
+      {
+         var _loc1_:String = "";
+         for each(var _loc2_ in _previousAttackers)
+         {
+            _loc1_ += _loc2_ + "\n";
+         }
+         return _loc1_;
+      }
+      
+      public function getPreviousAttackerNames(param1:int) : String
+      {
+         var _loc6_:int = 0;
+         var _loc5_:int = 0;
+         var _loc2_:String = "";
+         var _loc3_:int = 0;
+         for each(var _loc4_ in _previousAttackers)
+         {
+            if(_loc3_ >= param1)
+            {
+               break;
+            }
+            if(_loc3_ >= 10)
+            {
+               break;
+            }
+            _loc2_ = _loc4_ + "\n" + _loc2_;
+            _loc3_++;
+         }
+         if(_previousAttackers.length > 10)
+         {
+            _loc2_ += "\n";
+            _loc6_ = 0;
+            _loc5_ = 0;
+            for each(_loc4_ in _previousAttackers)
+            {
+               if(_loc5_ < 10)
+               {
+                  _loc5_++;
+               }
+               else
+               {
+                  if(_loc6_ >= 10)
+                  {
+                     break;
+                  }
+                  _loc2_ += _loc4_ + "\n";
+                  _loc6_++;
+               }
+            }
+         }
+         return _loc2_;
+      }
+      
+      public function get remainingSeconds() : int
+      {
+         var _loc2_:int = getData("ts_complete") as int;
+         var _loc1_:int = _loc2_ - TimeUtil.now;
+         if(_loc1_ < 0)
+         {
+            _loc1_ = 0;
+         }
+         return _loc1_;
+      }
+      
+      public function get progress() : Number
+      {
+         return (1 - remainingSeconds / duration) * 100;
+      }
+      
+      public function get remainingSecondsNonBoosted() : int
+      {
+         var _loc3_:int = getData("duration_raw") as int;
+         var _loc1_:int = getData("duration") as int;
+         var _loc2_:int = _loc3_ - _loc1_;
+         return remainingSeconds + _loc2_;
+      }
+      
+      public function get id() : int
+      {
+         return getData("id") as int;
+      }
+      
+      public function get eventId() : int
+      {
+         return getData("worldboss_event_id") as int;
+      }
+      
+      public function get event() : WorldbossEvent
+      {
+         return ViewManager.instance.user.character.getWorldbossEvent(eventId);
+      }
+      
+      public function get battle() : Battle
+      {
+         return _battle;
+      }
+      
+      public function get battleId() : int
+      {
+         return getData("battle_id") as int;
+      }
+      
+      public function get status() : int
+      {
+         return getData("status") as int;
+      }
+      
+      public function get isStarted() : Boolean
+      {
+         return status == 1;
+      }
+      
+      public function get isRunning() : Boolean
+      {
+         return status == 1 && remainingSeconds > 0;
+      }
+      
+      public function get isFinished() : Boolean
+      {
+         return status == 3;
+      }
+      
+      public function get instantFinishPremiumAmount() : int
+      {
+         return GameUtil.getWorldbossAttackInstantFinishCost();
+      }
+      
+      public function get duration() : int
+      {
+         return getData("duration") as int;
+      }
+      
+      public function get damageDone() : int
+      {
+         return getData("total_damage") as int;
+      }
+      
+      public function get progressText() : String
+      {
+         return event.descriptionText;
+      }
+      
+      public function get isTimeQuest() : Boolean
+      {
+         return false;
+      }
+      
+      public function get isFightQuest() : Boolean
+      {
+         return false;
+      }
+      
+      public function get isWorldbossAttack() : Boolean
+      {
+         return true;
+      }
+   }
+}
+
+
+
+--- End of com\playata\application\data\worldboss\WorldbossAttack.as ---
+
+--- com\playata\application\data\worldboss\WorldbossAttackStatus.as ---
+
+package com.playata.application.data.worldboss
+{
+   public class WorldbossAttackStatus
+   {
+      
+      public static const Unknown:int = 0;
+      
+      public static const Started:int = 1;
+      
+      public static const Aborted:int = 2;
+      
+      public static const Finished:int = 3;
+      
+      public function WorldbossAttackStatus()
+      {
+         super();
+      }
+   }
+}
+
+
+
+--- End of com\playata\application\data\worldboss\WorldbossAttackStatus.as ---
+
+--- com\playata\application\data\worldboss\WorldbossEvent.as ---
+
+package com.playata.application.data.worldboss
+{
+   import com.playata.application.platform.ServerInfo;
+   import com.playata.application.ui.ViewManager;
+   import com.playata.framework.core.config.Constants;
+   import com.playata.framework.core.util.StringUtil;
+   import com.playata.framework.core.util.TimeUtil;
+   import com.playata.framework.data.DataObject;
+   import com.playata.framework.localization.LocText;
+   
+   public class WorldbossEvent extends DataObject
+   {
+      
+      public function WorldbossEvent(param1:Object = null)
+      {
+         super(param1);
+      }
+      
+      public function get id() : int
+      {
+         return getData("id") as int;
+      }
+      
+      public function get minLevel() : int
+      {
+         return getData("min_level") as int;
+      }
+      
+      public function get maxLevel() : int
+      {
+         return getData("max_level") as int;
+      }
+      
+      public function get stage() : int
+      {
+         return getData("stage") as int;
+      }
+      
+      public function get identifier() : String
+      {
+         return getData("identifier") as String;
+      }
+      
+      public function get callerName() : String
+      {
+         return LocText.instance.text("worldboss_event/" + identifier + "/caller");
+      }
+      
+      public function get npcIdentifier() : String
+      {
+         return getData("npc_identifier") as String;
+      }
+      
+      public function get npcName() : String
+      {
+         return LocText.instance.text("npc/" + npcIdentifier + "/name");
+      }
+      
+      public function get npcHitpointsTotal() : int
+      {
+         return getData("npc_hitpoints_total") as int;
+      }
+      
+      public function get npcHitpointsCurrent() : int
+      {
+         return getData("npc_hitpoints_current") as int;
+      }
+      
+      public function get npcImageUrl() : String
+      {
+         return ServerInfo.assetURL("worldboss_npcs/" + npcIdentifier,"png");
+      }
+      
+      public function get npcThumbnailImageUrl() : String
+      {
+         return ServerInfo.assetURL("worldboss_npcs/" + npcIdentifier + "_t","png");
+      }
+      
+      public function get npcThumbnailSmallImageUrl() : String
+      {
+         return ServerInfo.assetURL("worldboss_npcs/" + npcIdentifier + "_ts","png");
+      }
+      
+      public function get npcIconImageUrl() : String
+      {
+         return ServerInfo.assetURL("worldboss_npcs/" + npcIdentifier + "_i","png");
+      }
+      
+      public function get npcVoiceType() : int
+      {
+         return Constants.instance.constant("npcs")[npcIdentifier]["voice"] as int;
+      }
+      
+      public function get attackCount() : int
+      {
+         return getData("attack_count") as int;
+      }
+      
+      public function get ownAttackCount() : int
+      {
+         return ViewManager.instance.user.character.getWorldbossEventAttackCount(id);
+      }
+      
+      public function get status() : int
+      {
+         return getData("status") as int;
+      }
+      
+      public function get topAttackerCount() : int
+      {
+         return getData("top_attacker_count") as int;
+      }
+      
+      public function get topAttackerName() : String
+      {
+         return getData("top_attacker_name") as String;
+      }
+      
+      public function get winningStrikeAttackerName() : String
+      {
+         var _loc1_:String = getData("winning_attacker_name") as String;
+         return StringUtil.replace(_loc1_,"2_","");
+      }
+      
+      public function get isSecondLastWinningStrikeAttacker() : Boolean
+      {
+         var _loc1_:String = getData("winning_attacker_name") as String;
+         return _loc1_.indexOf("2_") === 0;
+      }
+      
+      public function get briefingText() : String
+      {
+         return LocText.instance.text("worldboss_event/" + identifier + "/briefing_text",ViewManager.instance.user.character.name);
+      }
+      
+      public function get descriptionText() : String
+      {
+         return LocText.instance.text("worldboss_event/" + identifier + "/description_text");
+      }
+      
+      public function get defeatedText() : String
+      {
+         return LocText.instance.text("worldboss_event/" + identifier + "/defeated_text",ViewManager.instance.user.character.name);
+      }
+      
+      public function get fledText() : String
+      {
+         return LocText.instance.text("worldboss_event/" + identifier + "/fled_text",ViewManager.instance.user.character.name);
+      }
+      
+      public function get attackSummaryText() : String
+      {
+         return LocText.instance.text("worldboss_event/" + identifier + "/attack_summary_text");
+      }
+      
+      public function get rewardTopRankItemName() : String
+      {
+         return LocText.instance.text("item/" + (getData("reward_top_rank_item_identifier") as String) + "/name");
+      }
+      
+      public function get rewardTopRankItemIconImageUrl() : String
+      {
+         return ServerInfo.assetURL("items/" + (getData("reward_top_rank_item_identifier") as String) + "_i","png");
+      }
+      
+      public function get rewardTopPoolItemName() : String
+      {
+         return LocText.instance.text("item/" + (getData("reward_top_pool_item_identifier") as String) + "/name");
+      }
+      
+      public function get rewardTopPoolItemIconImageUrl() : String
+      {
+         return ServerInfo.assetURL("items/" + (getData("reward_top_pool_item_identifier") as String) + "_i","png");
+      }
+      
+      public function get isValid() : Boolean
+      {
+         return ViewManager.instance.user.character.getData("worldboss_event_id") == id;
+      }
+      
+      public function get isRunning() : Boolean
+      {
+         return status == 1 && remainingSeconds > 0;
+      }
+      
+      public function get isPending() : Boolean
+      {
+         return status == 2;
+      }
+      
+      public function get isFinished() : Boolean
+      {
+         return status == 4;
+      }
+      
+      public function get isDefeated() : Boolean
+      {
+         return (status == 4 || status == 2) && npcHitpointsCurrent <= 0;
+      }
+      
+      public function get remainingSeconds() : int
+      {
+         var _loc1_:int = getData("ts_end") as int;
+         var _loc2_:int = _loc1_ - TimeUtil.now;
+         if(_loc2_ < 0)
+         {
+            return 0;
+         }
+         return _loc2_;
+      }
+      
+      public function get reward() : WorldbossReward
+      {
+         return ViewManager.instance.user.character.getWorldbossReward(id);
+      }
+      
+      public function get ownRanking() : int
+      {
+         return getData("ranking") as int;
+      }
+      
+      public function get ownGameCurrencyRewardTotal() : int
+      {
+         return getData("coin_reward_total") as int;
+      }
+      
+      public function get ownGameCurrencyRewardNextAttack() : int
+      {
+         return getData("coin_reward_next_attack") as int;
+      }
+      
+      public function get ownGameCurrencyRewardTotalNextAttack() : int
+      {
+         return ownGameCurrencyRewardTotal + ownGameCurrencyRewardNextAttack;
+      }
+      
+      public function get ownXpRewardTotal() : int
+      {
+         return getData("xp_reward_total") as int;
+      }
+      
+      public function get ownXpRewardNextAttack() : int
+      {
+         return getData("xp_reward_next_attack") as int;
+      }
+      
+      public function get ownXpRewardTotalNextAttack() : int
+      {
+         return ownXpRewardTotal + ownXpRewardNextAttack;
+      }
+   }
+}
+
+
+
+--- End of com\playata\application\data\worldboss\WorldbossEvent.as ---
+
+--- com\playata\application\data\worldboss\WorldbossEventStatus.as ---
+
+package com.playata.application.data.worldboss
+{
+   public class WorldbossEventStatus
+   {
+      
+      public static const Unknown:int = 0;
+      
+      public static const Started:int = 1;
+      
+      public static const ProcessingRewardsPending:int = 2;
+      
+      public static const ProcessingRewards:int = 3;
+      
+      public static const Finished:int = 4;
+      
+      public function WorldbossEventStatus()
+      {
+         super();
+      }
+   }
+}
+
+
+
+--- End of com\playata\application\data\worldboss\WorldbossEventStatus.as ---
+
+--- com\playata\application\data\worldboss\WorldbossReward.as ---
+
+package com.playata.application.data.worldboss
+{
+   import com.playata.application.data.reward.Reward;
+   import com.playata.application.main.GameUtil;
+   import com.playata.framework.data.DataObject;
+   
+   public class WorldbossReward extends DataObject
+   {
+      
+      private var _additionalRewards:Reward = null;
+      
+      public function WorldbossReward(param1:Object = null)
+      {
+         super(param1);
+      }
+      
+      public function get id() : int
+      {
+         return getData("id") as int;
+      }
+      
+      public function get eventId() : int
+      {
+         return getData("worldboss_event_id") as int;
+      }
+      
+      public function get coins() : int
+      {
+         return getData("game_currency") as int;
+      }
+      
+      public function get coinsString() : String
+      {
+         if(coins == 0)
+         {
+            return "";
+         }
+         return GameUtil.getGameCurrencyString(coins);
+      }
+      
+      public function get xp() : int
+      {
+         return getData("xp") as int;
+      }
+      
+      public function get xpString() : String
+      {
+         if(xp == 0)
+         {
+            return "";
+         }
+         return GameUtil.getXpString(xp);
+      }
+      
+      public function get itemId() : int
+      {
+         return getData("item_id") as int;
+      }
+      
+      public function get sidekickItemId() : int
+      {
+         return getData("sidekick_item_id") as int;
+      }
+      
+      public function get additionalRewards() : Reward
+      {
+         var _loc1_:String = getData("rewards") as String;
+         if(!_loc1_)
+         {
+            return null;
+         }
+         if(_additionalRewards == null)
+         {
+            _additionalRewards = new Reward(_loc1_);
+         }
+         return _additionalRewards;
+      }
+      
+      public function get questEnergy() : int
+      {
+         if(!additionalRewards)
+         {
+            return 0;
+         }
+         return additionalRewards.questEnergy;
+      }
+      
+      public function get trainingSessions() : int
+      {
+         if(!additionalRewards)
+         {
+            return 0;
+         }
+         return additionalRewards.trainingSessions;
+      }
+   }
+}
+
+
+
+--- End of com\playata\application\data\worldboss\WorldbossReward.as ---
+
+--- com\playata\application\data\worldboss\WorldbossRewardType.as ---
+
+package com.playata.application.data.worldboss
+{
+   public class WorldbossRewardType
+   {
+      
+      public static const Unknown:int = 0;
+      
+      public static const QuestEnergy:int = 1;
+      
+      public static const TrainingSessions:int = 2;
+      
+      public function WorldbossRewardType()
+      {
+         super();
+      }
+   }
+}
+
+
+
+--- End of com\playata\application\data\worldboss\WorldbossRewardType.as ---
+
+--- com\playata\application\ui\dialogs\DialogWorldbossAttackComplete.as ---
+
+package com.playata.application.ui.dialogs
+{
+   import com.playata.application.data.worldboss.WorldbossAttack;
+   import com.playata.application.ui.ViewManager;
+   import com.playata.application.ui.elements.battle.UiNpcHitpointBar;
+   import com.playata.application.ui.elements.generic.button.UiTextButton;
+   import com.playata.application.ui.elements.generic.dialog.UiDialog;
+   import com.playata.application.ui.elements.generic.dialog.UiTwoChoiceDialog;
+   import com.playata.framework.application.Environment;
+   import com.playata.framework.display.events.InteractionEvent;
+   import com.playata.framework.display.ui.controls.Button;
+   import com.playata.framework.localization.LocText;
+   import com.playata.framework.sound.SoundManager;
+   import visuals.ui.dialogs.SymbolDialogWorldbossAttackCompleteGeneric;
+   
+   public class DialogWorldbossAttackComplete extends UiDialog
+   {
+      
+      private var _btnClose:UiTextButton = null;
+      
+      private var _npcHitpointBar:UiNpcHitpointBar = null;
+      
+      public function DialogWorldbossAttackComplete(param1:WorldbossAttack)
+      {
+         var _loc2_:SymbolDialogWorldbossAttackCompleteGeneric = new SymbolDialogWorldbossAttackCompleteGeneric();
+         super(_loc2_);
+         _loc2_.txtDialogTitle.text = LocText.instance.text("dialog/worldboss_attack_completed/title");
+         _loc2_.txtHitpoints.text = LocText.instance.text("dialog/worldboss_attack_completed/hitpoints_caption");
+         _loc2_.txtInfo.text = param1.event.attackSummaryText;
+         _loc2_.txtDamageTotal.text = LocText.instance.text("dialog/worldboss_attack_completed/damage_done",LocText.instance.formatHugeNumber(param1.damageDone));
+         _loc2_.txtAttackCountTotal.text = LocText.instance.text("dialog/worldboss_attack_completed/attack_count_total",LocText.instance.text("general/attack",param1.event.attackCount));
+         if(param1.event.ownRanking == 0)
+         {
+            _loc2_.txtAttackCountOwn.text = LocText.instance.text("dialog/worldboss_attack_completed/attack_count_own_none",param1.event.ownAttackCount);
+         }
+         else
+         {
+            _loc2_.txtAttackCountOwn.text = LocText.instance.text("dialog/worldboss_attack_completed/attack_count_own",param1.event.ownAttackCount,LocText.instance.formatHugeNumber(param1.event.ownRanking));
+         }
+         _npcHitpointBar = new UiNpcHitpointBar(_loc2_.progress,param1.event.npcHitpointsTotal,param1.battle.profileBEndHitPoints);
+         _btnClose = new UiTextButton(_loc2_.btnClose,LocText.instance.text("general/button_ok"),"",onClickClose);
+      }
+      
+      override public function dispose() : void
+      {
+         if(_btnClose == null)
+         {
+            return;
+         }
+         _btnClose.dispose();
+         _btnClose = null;
+         _npcHitpointBar.dispose();
+         _npcHitpointBar = null;
+         super.dispose();
+      }
+      
+      override public function show() : void
+      {
+         super.show();
+         SoundManager.instance.playFX("event_pvp_lose.mp3");
+      }
+      
+      private function onClickGotoShop() : void
+      {
+         ViewManager.instance.showPanel("shop");
+         close();
+      }
+      
+      private function onClickGotoQuest() : void
+      {
+         ViewManager.instance.showPanel("quests");
+         close();
+      }
+      
+      private function onClickClose(param1:InteractionEvent) : void
+      {
+         if(ViewManager.instance.user.character.hasRunOutMissiles())
+         {
+            Environment.panelManager.showDialog(new UiTwoChoiceDialog(LocText.instance.text("dialog/run_out_missiles/title"),LocText.instance.text("dialog/run_out_missiles/text"),LocText.instance.text("dialog/run_out_missiles/button_shop"),LocText.instance.text("dialog/run_out_missiles/button_cancel"),onClickGotoShop,onClickGotoQuest));
+         }
+         else
+         {
+            ViewManager.instance.showPanel("quests");
+         }
+         close();
+      }
+      
+      override public function get defaultButton() : Button
+      {
+         return _btnClose;
+      }
+   }
+}
+
+
+
+--- End of com\playata\application\ui\dialogs\DialogWorldbossAttackComplete.as ---
+
+--- com\playata\application\ui\dialogs\DialogWorldbossEventComplete.as ---
+
+package com.playata.application.ui.dialogs
+{
+   import com.playata.application.data.item.Item;
+   import com.playata.application.data.worldboss.WorldbossEvent;
+   import com.playata.application.main.ApplicationController;
+   import com.playata.application.main.GameUtil;
+   import com.playata.application.request.ApplicationRequest;
+   import com.playata.application.ui.ViewManager;
+   import com.playata.application.ui.effects.EffectType;
+   import com.playata.application.ui.effects.EffectsLayer;
+   import com.playata.application.ui.elements.generic.button.UiTextButton;
+   import com.playata.application.ui.elements.generic.dialog.UiDialog;
+   import com.playata.application.ui.elements.generic.dialog.UiTwoChoiceDialog;
+   import com.playata.application.ui.elements.generic.textfield.UiTextTooltip;
+   import com.playata.application.ui.elements.item.UiItemSlot;
+   import com.playata.application.ui.elements.worldboss.UiWorldbossReward;
+   import com.playata.application.ui.panels.PanelQuests;
+   import com.playata.framework.application.Environment;
+   import com.playata.framework.core.util.StringUtil;
+   import com.playata.framework.display.events.InteractionEvent;
+   import com.playata.framework.display.ui.controls.Button;
+   import com.playata.framework.localization.LocText;
+   import com.playata.framework.messaging.Message;
+   import com.playata.framework.messaging.MessageRouter;
+   import com.playata.framework.sound.SoundManager;
+   import flash.display.MovieClip;
+   import visuals.ui.dialogs.SymbolDialogWorldbossEventCompleteGeneric;
+   
+   public class DialogWorldbossEventComplete extends UiDialog
+   {
+      
+      private static var _isOpen:Boolean = false;
+      
+      private var _btnClose:UiTextButton = null;
+      
+      private var _itemReward:UiItemSlot = null;
+      
+      private var _sidekickReward:UiItemSlot = null;
+      
+      private var _topCaptionTooltip:UiTextTooltip = null;
+      
+      private var _reward1:UiWorldbossReward = null;
+      
+      private var _reward2:UiWorldbossReward = null;
+      
+      private var _worldbossEvent:WorldbossEvent = null;
+      
+      public function DialogWorldbossEventComplete(param1:WorldbossEvent)
+      {
+         _worldbossEvent = param1;
+         _isOpen = true;
+         var _loc2_:SymbolDialogWorldbossEventCompleteGeneric = new SymbolDialogWorldbossEventCompleteGeneric();
+         super(_loc2_);
+         _queued = false;
+         if(_worldbossEvent.isDefeated)
+         {
+            _loc2_.txtDialogTitle.text = LocText.instance.text("dialog/worldboss_event_complete/title_defeated");
+            _loc2_.txtFled.visible = false;
+            _loc2_.txtDefeated.visible = true;
+         }
+         else
+         {
+            _loc2_.txtDialogTitle.text = LocText.instance.text("dialog/worldboss_event_complete/title_fled");
+            _loc2_.txtFled.visible = true;
+            _loc2_.txtDefeated.visible = false;
+         }
+         _loc2_.txtNpcName.text = _worldbossEvent.npcName;
+         _loc2_.txtFled.text = LocText.instance.text("dialog/worldboss_event_complete/fled");
+         _loc2_.txtDefeated.text = LocText.instance.text("dialog/worldboss_event_complete/defeated");
+         _loc2_.npcPicture.setUriSprite(_worldbossEvent.npcImageUrl,263,383,true,1,null,true);
+         _loc2_.setTextFieldGlow(_loc2_.txtFled,16777215);
+         _loc2_.setTextFieldGlow(_loc2_.txtDefeated,16777215);
+         _loc2_.txtStatisticCaption.text = LocText.instance.text("dialog/worldboss_event_complete/statistic_caption");
+         _loc2_.txtDamageTotal.text = LocText.instance.text("dialog/worldboss_event_complete/damage_total",LocText.instance.formatHugeNumber(_worldbossEvent.npcHitpointsTotal - _worldbossEvent.npcHitpointsCurrent));
+         _loc2_.txtAttackCountTotal.text = LocText.instance.text("dialog/worldboss_event_complete/attack_count_total",LocText.instance.text("general/attack",_worldbossEvent.attackCount));
+         if(_worldbossEvent.ownRanking == 0)
+         {
+            _loc2_.txtAttackCountOwn.text = LocText.instance.text("dialog/worldboss_event_complete/attack_count_own_none",_worldbossEvent.ownAttackCount);
+         }
+         else
+         {
+            _loc2_.txtAttackCountOwn.text = LocText.instance.text("dialog/worldboss_event_complete/attack_count_own",_worldbossEvent.ownAttackCount,LocText.instance.formatHugeNumber(_worldbossEvent.ownRanking));
+         }
+         _loc2_.txtTopCaption.text = LocText.instance.text("dialog/worldboss_event_complete/top_caption");
+         if(_worldbossEvent.isSecondLastWinningStrikeAttacker)
+         {
+            _loc2_.txtTopCaption.text += " *";
+            _topCaptionTooltip = new UiTextTooltip(_loc2_.txtTopCaption,LocText.instance.text("dialog/worldboss_event_complete/same_top_player_reward_hint",_worldbossEvent.topAttackerName,_worldbossEvent.winningStrikeAttackerName));
+         }
+         _loc2_.txtTopAttacks.text = LocText.instance.text("dialog/worldboss_event_complete/top_attacker",StringUtil.cutLength(_worldbossEvent.topAttackerName,12),LocText.instance.text("general/attack",_worldbossEvent.topAttackerCount));
+         _loc2_.txtWinningStrike.text = LocText.instance.text("dialog/worldboss_event_complete/winning_strike",StringUtil.cutLength(_worldbossEvent.winningStrikeAttackerName,12));
+         _loc2_.iconWinningStrike.visible = !StringUtil.isEmpty(_worldbossEvent.winningStrikeAttackerName);
+         _loc2_.txtWinningStrike.visible = _loc2_.iconWinningStrike.visible;
+         if(_worldbossEvent.isDefeated || _worldbossEvent.ownAttackCount == 0)
+         {
+            _loc2_.txtRewardsCaption.text = LocText.instance.text("dialog/worldboss_event_complete/rewards_caption");
+         }
+         else
+         {
+            _loc2_.txtRewardsCaption.text = LocText.instance.text("dialog/worldboss_event_complete/rewards_fled_caption");
+         }
+         _loc2_.txtNoRewardText.text = LocText.instance.text("dialog/worldboss_event_complete/no_rewards");
+         if(_worldbossEvent.ownAttackCount == 0)
+         {
+            _loc2_.itemReward.visible = false;
+            _loc2_.sidekickReward.visible = false;
+            _loc2_.iconCoins.visible = false;
+            _loc2_.txtCoins.visible = false;
+            _loc2_.iconXp.visible = false;
+            _loc2_.txtXp.visible = false;
+            _loc2_.txtNoRewardText.visible = true;
+            _loc2_.reward1.visible = false;
+            _loc2_.reward2.visible = false;
+         }
+         else
+         {
+            _loc2_.txtNoRewardText.visible = false;
+            _loc2_.itemReward.visible = _worldbossEvent.reward.itemId != 0;
+            if(_worldbossEvent.reward.itemId != 0)
+            {
+               _itemReward = new UiItemSlot(_loc2_.itemReward,0);
+               _itemReward.item = ViewManager.instance.user.character.items[_worldbossEvent.reward.itemId];
+            }
+            _loc2_.sidekickReward.visible = _worldbossEvent.reward.sidekickItemId != 0;
+            if(_worldbossEvent.reward.sidekickItemId != 0)
+            {
+               _sidekickReward = new UiItemSlot(_loc2_.sidekickReward,0);
+               _sidekickReward.item = ViewManager.instance.user.character.items[_worldbossEvent.reward.sidekickItemId];
+            }
+            _loc2_.iconCoins.visible = _worldbossEvent.reward.coins > 0;
+            _loc2_.txtCoins.visible = _worldbossEvent.reward.coins > 0;
+            _loc2_.txtCoins.text = _worldbossEvent.reward.coinsString;
+            _loc2_.iconXp.visible = _worldbossEvent.reward.xp > 0;
+            _loc2_.txtXp.visible = _worldbossEvent.reward.xp > 0;
+            _loc2_.txtXp.text = _worldbossEvent.reward.xpString;
+            _reward1 = new UiWorldbossReward(_loc2_.reward1);
+            _reward2 = new UiWorldbossReward(_loc2_.reward2);
+            _reward1.refresh(1,_worldbossEvent.reward.questEnergy);
+            _reward2.refresh(2,_worldbossEvent.reward.trainingSessions);
+            _loc2_.reward1.visible = _worldbossEvent.reward.questEnergy > 0;
+            _loc2_.reward2.visible = _worldbossEvent.reward.trainingSessions > 0;
+         }
+         _btnClose = new UiTextButton(_loc2_.btnClose,LocText.instance.text("general/button_ok"),"",onClickClose);
+         if(!_worldbossEvent.isDefeated || !_loc2_.reward1.visible && !_loc2_.reward2.visible)
+         {
+            _loc2_.dialogBackground.height -= 50;
+            _loc2_.rewardBackground.height -= 50;
+            _btnClose.content.y -= 50;
+         }
+      }
+      
+      public static function get isOpen() : Boolean
+      {
+         return _isOpen;
+      }
+      
+      override public function dispose() : void
+      {
+         if(_btnClose == null)
+         {
+            return;
+         }
+         if(_topCaptionTooltip != null)
+         {
+            _topCaptionTooltip.dispose();
+            _topCaptionTooltip = null;
+         }
+         if(_reward1 != null)
+         {
+            _reward1.dispose();
+            _reward1 = null;
+         }
+         if(_reward2 != null)
+         {
+            _reward2.dispose();
+            _reward2 = null;
+         }
+         _btnClose.dispose();
+         _btnClose = null;
+         super.dispose();
+      }
+      
+      override public function show() : void
+      {
+         super.show();
+         if(_worldbossEvent.isDefeated)
+         {
+            SoundManager.instance.playFX("event_guild_battle_won.mp3");
+         }
+         else
+         {
+            SoundManager.instance.playFX("event_guild_battle_lost.mp3");
+         }
+      }
+      
+      override public function close(param1:Function = null) : void
+      {
+         _isOpen = false;
+         super.close(param1);
+      }
+      
+      private function onClickClose(param1:InteractionEvent) : void
+      {
+         new ApplicationRequest("claimWorldbossEventRewards",{
+            "worldboss_event_id":_worldbossEvent.id,
+            "discard_item":false
+         },handleRequests);
+      }
+      
+      private function onClickGotoShop() : void
+      {
+         DialogWorldbossEventInfo.removeFinishedEventId(_worldbossEvent.id);
+         ViewManager.instance.showPanel("shop");
+         close();
+      }
+      
+      private function onClickDiscardItem() : void
+      {
+         new ApplicationRequest("claimWorldbossEventRewards",{
+            "worldboss_event_id":_worldbossEvent.id,
+            "discard_item":true
+         },handleRequests);
+      }
+      
+      private function handleRequests(param1:String, param2:Object, param3:Object, param4:String) : void
+      {
+         var _loc5_:int = 0;
+         var _loc6_:* = param1;
+         if("claimWorldbossEventRewards" !== _loc6_)
+         {
+            throw new Error("Unsupported request action \'" + param1 + "\'!");
+         }
+         if(param4 == "")
+         {
+            MessageRouter.dispatch(new Message("ApplicationMessage.updateUserAndCharacter",param3,this));
+            showRewardEffect(!param2.discard_item);
+            close();
+            if(ViewManager.instance.activePanel == "quests")
+            {
+               (ViewManager.instance.activePanelInstance as PanelQuests).checkForWorldbossEventInfos();
+            }
+            else
+            {
+               ViewManager.instance.showPanel("quests");
+            }
+         }
+         else if(param4 == "errInventoryNoEmptySlot")
+         {
+            _loc5_ = 0;
+            if(_itemReward && _itemReward.item)
+            {
+               _loc5_ += _itemReward.item.sellPrice;
+            }
+            if(_sidekickReward && _sidekickReward.item)
+            {
+               _loc5_ += _sidekickReward.item.sellPrice;
+            }
+            Environment.panelManager.showDialog(new UiTwoChoiceDialog(LocText.instance.text("dialog/no_free_slot/title"),LocText.instance.text("dialog/no_free_slot/text",GameUtil.getGameCurrencyString(_loc5_)),LocText.instance.text("dialog/no_free_slot/button_go_to_shop"),LocText.instance.text("dialog/no_free_slot/button_discard_item"),onClickGotoShop,onClickDiscardItem));
+         }
+         else if(param4 != "errApplyInvalidStatus")
+         {
+            ApplicationController.reportError(param4,param2);
+         }
+      }
+      
+      private function showRewardEffect(param1:Boolean) : void
+      {
+         var _loc6_:MovieClip = null;
+         var _loc3_:MovieClip = null;
+         var _loc2_:Item = null;
+         var _loc4_:MovieClip = null;
+         var _loc5_:Item = null;
+         try
+         {
+            _loc6_ = MovieClip(_vo).iconCoins;
+            if(_loc6_.visible)
+            {
+               EffectsLayer.instance.show(EffectType.GAME_CURRENCY,{"emitter":_loc6_});
+            }
+            _loc3_ = MovieClip(_vo).iconXp;
+            if(_loc3_.visible)
+            {
+               EffectsLayer.instance.show(EffectType.XP,{"emitter":_loc3_});
+            }
+            if(param1 && _itemReward != null)
+            {
+               _loc2_ = ViewManager.instance.user.character.items[_worldbossEvent.reward.itemId];
+               EffectsLayer.instance.show(EffectType.ITEM,{
+                  "emitter":MovieClip(_vo).itemReward,
+                  "imageUrl":_loc2_.iconImageUrl
+               });
+            }
+            _loc4_ = MovieClip(_vo).reward2.iconTrainingSessions;
+            if(_loc4_.visible)
+            {
+               EffectsLayer.instance.show(EffectType.TRAINING,{
+                  "emitter":_loc4_,
+                  "amount":_worldbossEvent.reward.trainingSessions
+               });
+            }
+            if(param1 && _sidekickReward != null)
+            {
+               _loc5_ = ViewManager.instance.user.character.items[_worldbossEvent.reward.sidekickItemId];
+               EffectsLayer.instance.show(EffectType.ITEM,{
+                  "emitter":MovieClip(_vo).sidekickReward,
+                  "imageUrl":_loc5_.iconImageUrl
+               });
+            }
+         }
+         catch(e:Error)
+         {
+         }
+      }
+      
+      override public function get defaultButton() : Button
+      {
+         return _btnClose;
+      }
+   }
+}
+
+
+
+--- End of com\playata\application\ui\dialogs\DialogWorldbossEventComplete.as ---
+
+--- com\playata\application\ui\dialogs\DialogWorldbossEventInfo.as ---
+
+package com.playata.application.ui.dialogs
+{
+   import com.greensock.TimelineMax;
+   import com.playata.application.data.worldboss.WorldbossEvent;
+   import com.playata.application.main.ApplicationController;
+   import com.playata.application.request.ApplicationRequest;
+   import com.playata.application.ui.ViewManager;
+   import com.playata.application.ui.elements.generic.button.UiTextButton;
+   import com.playata.application.ui.elements.generic.dialog.UiDialog;
+   import com.playata.framework.application.Environment;
+   import com.playata.framework.display.events.InteractionEvent;
+   import com.playata.framework.display.ui.controls.Button;
+   import com.playata.framework.localization.LocText;
+   import com.playata.framework.messaging.Message;
+   import com.playata.framework.messaging.MessageRouter;
+   import com.playata.framework.sound.SoundManager;
+   import visuals.ui.dialogs.SymbolDialogWorldbossEventInfoGeneric;
+   
+   public class DialogWorldbossEventInfo extends UiDialog
+   {
+      
+      private static var _isOpen:Boolean = false;
+      
+      private static var _shownNewEventIds:Vector.<int> = new Vector.<int>();
+      
+      private static var _shownPendingEventIds:Vector.<int> = new Vector.<int>();
+      
+      private static var _shownFinishedEventIds:Vector.<int> = new Vector.<int>();
+      
+      private var _btnClose:UiTextButton = null;
+      
+      private var _worldbossEvent:WorldbossEvent = null;
+      
+      public function DialogWorldbossEventInfo(param1:WorldbossEvent)
+      {
+         var _loc2_:SymbolDialogWorldbossEventInfoGeneric = new SymbolDialogWorldbossEventInfoGeneric();
+         super(_loc2_);
+         _worldbossEvent = param1;
+         _isOpen = true;
+         _loc2_.txtCallerName.text = param1.callerName;
+         _loc2_.txtRewards.visible = false;
+         if(param1.isRunning)
+         {
+            _loc2_.txtDialogTitle.text = LocText.instance.text("dialog/worldboss_event/title_new_event");
+            _loc2_.txtInfo.text = param1.briefingText;
+            _loc2_.txtInfo.autoFontSize = true;
+         }
+         else
+         {
+            if(param1.isDefeated)
+            {
+               _loc2_.txtDialogTitle.text = LocText.instance.text("dialog/worldboss_event/title_defeated");
+               _loc2_.txtInfo.text = param1.defeatedText;
+               _loc2_.txtInfo.autoFontSize = true;
+            }
+            else
+            {
+               _loc2_.txtDialogTitle.text = LocText.instance.text("dialog/worldboss_event/title_fled");
+               _loc2_.txtInfo.text = param1.fledText;
+               _loc2_.txtInfo.autoFontSize = true;
+            }
+            if(param1.isPending)
+            {
+               _loc2_.txtRewards.visible = true;
+               _loc2_.txtRewards.text = LocText.instance.text("dialog/worldboss_event/rewards_processing");
+            }
+         }
+         _btnClose = new UiTextButton(_loc2_.btnClose,LocText.instance.text("general/button_ok"),"",onClickClose);
+      }
+      
+      public static function get isOpen() : Boolean
+      {
+         return _isOpen;
+      }
+      
+      public static function reset() : void
+      {
+         _shownNewEventIds = new Vector.<int>();
+         _shownPendingEventIds = new Vector.<int>();
+         _shownFinishedEventIds = new Vector.<int>();
+      }
+      
+      public static function pendingHasBeenShown(param1:WorldbossEvent) : Boolean
+      {
+         for each(var _loc2_ in _shownPendingEventIds)
+         {
+            if(_loc2_ == param1.id)
+            {
+               return true;
+            }
+         }
+         return false;
+      }
+      
+      public static function hasBeenShown(param1:WorldbossEvent) : Boolean
+      {
+         if(!param1.isFinished && !param1.isPending)
+         {
+            for each(var _loc3_ in _shownNewEventIds)
+            {
+               if(_loc3_ == param1.id)
+               {
+                  return true;
+               }
+            }
+            _shownNewEventIds.push(param1.id);
+            ViewManager.instance.user.character.removeNewWorldbossEventId(param1.id);
+            return false;
+         }
+         if(param1.isPending)
+         {
+            for each(var _loc4_ in _shownPendingEventIds)
+            {
+               if(_loc4_ == param1.id)
+               {
+                  return true;
+               }
+            }
+            _shownPendingEventIds.push(param1.id);
+            return false;
+         }
+         if(param1.isFinished)
+         {
+            for each(var _loc2_ in _shownFinishedEventIds)
+            {
+               if(_loc2_ == param1.id)
+               {
+                  return true;
+               }
+            }
+            _shownFinishedEventIds.push(param1.id);
+            return false;
+         }
+         return false;
+      }
+      
+      public static function removeFinishedEventId(param1:int) : void
+      {
+         var _loc2_:int = int(_shownFinishedEventIds.indexOf(param1));
+         if(_loc2_ !== -1)
+         {
+            _shownFinishedEventIds.splice(_loc2_,1);
+         }
+      }
+      
+      override public function dispose() : void
+      {
+         _btnClose.dispose();
+         _btnClose = null;
+         super.dispose();
+      }
+      
+      override public function show() : void
+      {
+         super.show();
+         var _loc2_:SymbolDialogWorldbossEventInfoGeneric = _vo as SymbolDialogWorldbossEventInfoGeneric;
+         var _loc1_:TimelineMax = new TimelineMax();
+         _loc1_.set(_loc2_.phone,{"rotation":0},0);
+         _loc1_.set(_loc2_.phone,{"rotation":-2.223},0.1667);
+         _loc1_.set(_loc2_.phone,{"rotation":1.0577},0.2333);
+         _loc1_.set(_loc2_.phone,{"rotation":-2.0065},0.3);
+         _loc1_.set(_loc2_.phone,{"rotation":0},0.3667);
+         _loc1_.set(_loc2_.phone,{"rotation":-2.223},0.9333);
+         _loc1_.set(_loc2_.phone,{"rotation":1.0577},1);
+         _loc1_.set(_loc2_.phone,{"rotation":-2.0065},1.0667);
+         _loc1_.set(_loc2_.phone,{"rotation":0},1.1333);
+         SoundManager.instance.playFX("event_worldboss_info_phone.mp3");
+      }
+      
+      override public function close(param1:Function = null) : void
+      {
+         _isOpen = false;
+         super.close(param1);
+      }
+      
+      private function onClickClose(param1:InteractionEvent) : void
+      {
+         close();
+         if(_worldbossEvent.isRunning)
+         {
+            new ApplicationRequest("assignWorldbossEvent",{"worldboss_event_id":_worldbossEvent.id},handleRequests);
+         }
+         else if(_worldbossEvent.isPending)
+         {
+            ViewManager.instance.baseUserPanel.syncGame();
+         }
+         else
+         {
+            Environment.panelManager.showDialog(new DialogWorldbossEventComplete(_worldbossEvent));
+         }
+      }
+      
+      private function handleRequests(param1:String, param2:Object, param3:Object, param4:String) : void
+      {
+         switch(param1)
+         {
+            case "assignWorldbossEvent":
+               if(param4 == "")
+               {
+                  MessageRouter.dispatch(new Message("ApplicationMessage.updateUserAndCharacter",param3,this));
+                  if(ViewManager.instance.activePanel == "quests" && ViewManager.instance.user.character.currentStage != _worldbossEvent.stage)
+                  {
+                     new ApplicationRequest("setCharacterStage",{"stage":_worldbossEvent.stage},handleRequests);
+                  }
+               }
+               else
+               {
+                  ApplicationController.reportError(param4,param2);
+               }
+               break;
+            case "setCharacterStage":
+               if(param4 == "")
+               {
+                  MessageRouter.dispatch(new Message("ApplicationMessage.updateUserAndCharacter",param3,this));
+               }
+               else
+               {
+                  ApplicationController.reportError(param4,param2);
+               }
+               break;
+            default:
+               throw new Error("Unsupported request action \'" + param1 + "\'!");
+         }
+      }
+      
+      override public function get defaultButton() : Button
+      {
+         return _btnClose;
+      }
+   }
+}
+
+
+
+--- End of com\playata\application\ui\dialogs\DialogWorldbossEventInfo.as ---
+
+--- com\playata\application\ui\elements\worldboss\UiWorldbossAttackBriefingContent.as ---
+
+package com.playata.application.ui.elements.worldboss
+{
+   import com.playata.application.data.worldboss.WorldbossAttack;
+   import com.playata.application.data.worldboss.WorldbossEvent;
+   import com.playata.application.main.ApplicationController;
+   import com.playata.application.main.GameUtil;
+   import com.playata.application.ui.effects.GlowFilterEffect;
+   import com.playata.application.ui.elements.battle.UiNpcHitpointBar;
+   import com.playata.application.ui.elements.generic.textfield.UiTextTooltip;
+   import com.playata.application.ui.elements.item.UiItemGraphic;
+   import com.playata.framework.application.Environment;
+   import com.playata.framework.core.util.ITimer;
+   import com.playata.framework.core.util.TimeUtil;
+   import com.playata.framework.localization.LocText;
+   import visuals.ui.elements.worldboss_event.SymbolWorldbossAttackBriefingContentGeneric;
+   
+   public class UiWorldbossAttackBriefingContent
+   {
+      
+      private var _content:SymbolWorldbossAttackBriefingContentGeneric = null;
+      
+      private var _worldbossEvent:WorldbossEvent = null;
+      
+      private var _npcHitpointBar:UiNpcHitpointBar = null;
+      
+      private var _tooltipTimeLeft:UiTextTooltip = null;
+      
+      private var _timer:ITimer = null;
+      
+      private var _reward1:UiWorldbossReward = null;
+      
+      private var _reward2:UiWorldbossReward = null;
+      
+      private var _tooltipGameCurrency:UiTextTooltip = null;
+      
+      private var _tooltipXp:UiTextTooltip = null;
+      
+      private var _tooltipTopRank:UiTextTooltip = null;
+      
+      private var _tooltipTopPool:UiTextTooltip = null;
+      
+      private var _tooltipOther:UiTextTooltip = null;
+      
+      private var _glowFilterTopRankItem:GlowFilterEffect = null;
+      
+      private var _glowFilterTopPoolItem:GlowFilterEffect = null;
+      
+      public function UiWorldbossAttackBriefingContent(param1:SymbolWorldbossAttackBriefingContentGeneric)
+      {
+         super();
+         _content = param1;
+         _tooltipTimeLeft = new UiTextTooltip(_content.txtTimeLeft,LocText.instance.text("dialog/worldboss_attack_briefing/time_left_tooltip"));
+         _npcHitpointBar = new UiNpcHitpointBar(_content.progress,10,10);
+         _content.txtTitle.text = LocText.instance.text("screen/quest/button_worldboss_event_tooltip");
+         _content.txtTitle.autoFontSize = true;
+         _tooltipGameCurrency = new UiTextTooltip(_content.txtCoins,"");
+         _tooltipXp = new UiTextTooltip(_content.txtXp,"");
+         _tooltipTopRank = new UiTextTooltip(_content.txtRewardTop1,"");
+         _tooltipTopPool = new UiTextTooltip(_content.txtRewardTop10,"");
+         _tooltipOther = new UiTextTooltip(_content.txtRewardOther,LocText.instance.text("dialog/worldboss_attack_briefing/reward_other_tooltip"));
+         _content.npcPicture.x += 180;
+         _reward1 = new UiWorldbossReward(_content.reward1);
+         _reward2 = new UiWorldbossReward(_content.reward2);
+         _glowFilterTopRankItem = UiItemGraphic.getItemGlowEffect(3,_content.iconTopRankItem);
+         _glowFilterTopPoolItem = UiItemGraphic.getItemGlowEffect(3,_content.iconTopPoolItem);
+         _glowFilterTopRankItem.play();
+         _glowFilterTopPoolItem.play();
+         _timer = Environment.createTimer("UiWorldbossAttackBriefingContent::timer",1000,onTimerEvent);
+      }
+      
+      public function dispose() : void
+      {
+         _timer.dispose();
+         _timer = null;
+         _glowFilterTopRankItem.dispose();
+         _glowFilterTopPoolItem.dispose();
+         _npcHitpointBar.dispose();
+         _npcHitpointBar = null;
+         _tooltipTimeLeft.dispose();
+         _tooltipTimeLeft = null;
+         _tooltipGameCurrency.dispose();
+         _tooltipGameCurrency = null;
+         _tooltipXp.dispose();
+         _tooltipXp = null;
+         _tooltipTopRank.dispose();
+         _tooltipTopRank = null;
+         _tooltipTopPool.dispose();
+         _tooltipTopPool = null;
+         _tooltipOther.dispose();
+         _tooltipOther = null;
+         _reward1.dispose();
+         _reward1 = null;
+         _reward2.dispose();
+         _reward2 = null;
+      }
+      
+      public function get content() : SymbolWorldbossAttackBriefingContentGeneric
+      {
+         return _content;
+      }
+      
+      public function refresh(param1:WorldbossEvent) : void
+      {
+         _worldbossEvent = param1;
+         if(_worldbossEvent == null)
+         {
+            return;
+         }
+         _content.txtNpcName.text = _worldbossEvent.npcName;
+         _content.txtRequirementsCaption.text = LocText.instance.text("dialog/worldboss_attack_briefing/requirements_caption");
+         _content.txtDuration.text = LocText.instance.text("dialog/worldboss_attack_briefing/requirement_time_format",TimeUtil.secondsToString(WorldbossAttack.eventDuration));
+         _content.txtRewardsCaption.text = LocText.instance.text("dialog/worldboss_attack_briefing/rewards_caption");
+         _content.txtCoins.text = GameUtil.getGameCurrencyString(_worldbossEvent.ownGameCurrencyRewardTotalNextAttack);
+         _content.txtXp.text = GameUtil.getXpString(_worldbossEvent.ownXpRewardTotalNextAttack);
+         _content.txtRewardTop1.text = LocText.instance.text("dialog/worldboss_attack_briefing/reward_top_rank");
+         _content.txtRewardTop10.text = LocText.instance.text("dialog/worldboss_attack_briefing/reward_top_pool");
+         _content.txtRewardOther.text = LocText.instance.text("dialog/worldboss_attack_briefing/reward_other");
+         _content.iconTopRankItem.icon.setUriSprite(_worldbossEvent.rewardTopRankItemIconImageUrl,30,30,false,1,null,true);
+         _content.iconTopPoolItem.icon.setUriSprite(_worldbossEvent.rewardTopPoolItemIconImageUrl,30,30,false,1,null,true);
+         _tooltipGameCurrency.text = LocText.instance.text("dialog/worldboss_attack_briefing/reward_coins_tooltip",GameUtil.getGameCurrencyString(_worldbossEvent.ownGameCurrencyRewardNextAttack));
+         _tooltipXp.text = LocText.instance.text("dialog/worldboss_attack_briefing/reward_xp_tooltip",GameUtil.getXpString(_worldbossEvent.ownXpRewardNextAttack));
+         _tooltipTopRank.text = LocText.instance.text("dialog/worldboss_attack_briefing/reward_top_rank_tooltip",_worldbossEvent.rewardTopRankItemName);
+         _tooltipTopPool.text = LocText.instance.text("dialog/worldboss_attack_briefing/reward_top_pool_tooltip",_worldbossEvent.rewardTopPoolItemName);
+         _reward1.setValue(1,LocText.instance.text("dialog/worldboss_attack_briefing/reward_quest_energy"),LocText.instance.text("dialog/worldboss_attack_briefing/reward_quest_energy_tooltip",GameUtil.getHighestWorldbossRewardValue(1)));
+         _reward2.setValue(2,LocText.instance.text("dialog/worldboss_attack_briefing/reward_training_sessions"),LocText.instance.text("dialog/worldboss_attack_briefing/reward_training_sessions_tooltip",GameUtil.getHighestWorldbossRewardValue(2)));
+         refreshHitpoints();
+         _content.npcPicture.setUriSprite(_worldbossEvent.npcThumbnailSmallImageUrl,180,256,false,1,null,true);
+         _content.npcPicture.scaleX = -1;
+         _timer.start();
+         onTimerEvent();
+      }
+      
+      public function refreshHitpoints() : void
+      {
+         if(_worldbossEvent == null)
+         {
+            return;
+         }
+         _npcHitpointBar.maximum = _worldbossEvent.npcHitpointsTotal;
+         _npcHitpointBar.value = _worldbossEvent.npcHitpointsCurrent;
+      }
+      
+      private function onTimerEvent() : void
+      {
+         if(!ApplicationController.instance.isLoggedIn)
+         {
+            if(_timer)
+            {
+               _timer.stop();
+            }
+            return;
+         }
+         if(_worldbossEvent == null)
+         {
+            return;
+         }
+         _content.txtTimeLeft.text = TimeUtil.secondsToStringFormat(_worldbossEvent.remainingSeconds,"H:m:s");
+      }
+   }
+}
+
+
+
+--- End of com\playata\application\ui\elements\worldboss\UiWorldbossAttackBriefingContent.as ---
+
+--- com\playata\application\ui\elements\worldboss\UiWorldbossEventButton.as ---
+
+package com.playata.application.ui.elements.worldboss
+{
+   import com.playata.application.data.worldboss.WorldbossEvent;
+   import com.playata.application.main.ApplicationController;
+   import com.playata.application.ui.elements.battle.UiNpcHitpointBarSmall;
+   import com.playata.application.ui.elements.generic.button.UiButton;
+   import com.playata.framework.application.Environment;
+   import com.playata.framework.core.util.ITimer;
+   import com.playata.framework.core.util.TimeUtil;
+   import visuals.ui.elements.worldboss_event.SymbolButtonWorldbossEventGeneric;
+   
+   public class UiWorldbossEventButton extends UiButton
+   {
+      
+      private var _button:SymbolButtonWorldbossEventGeneric = null;
+      
+      private var _worldbossEvent:WorldbossEvent = null;
+      
+      private var _npcHitpointBar:UiNpcHitpointBarSmall = null;
+      
+      private var _timer:ITimer = null;
+      
+      public function UiWorldbossEventButton(param1:SymbolButtonWorldbossEventGeneric, param2:String, param3:Function)
+      {
+         super(param1,param2,param3);
+         _button = param1;
+         _npcHitpointBar = new UiNpcHitpointBarSmall(_button.progress);
+         _button.questGraphic.npcIcon.removeAllChildren();
+         _timer = Environment.createTimer("UiWorldbossEventButton::timer",1000,onTimerEvent);
+      }
+      
+      override public function dispose() : void
+      {
+         _timer.dispose();
+         _timer = null;
+         _npcHitpointBar.dispose();
+         _npcHitpointBar = null;
+         super.dispose();
+      }
+      
+      public function refresh(param1:WorldbossEvent) : void
+      {
+         _worldbossEvent = param1;
+         visible = _worldbossEvent != null;
+         if(_worldbossEvent == null)
+         {
+            return;
+         }
+         if(!_worldbossEvent.isRunning || _worldbossEvent.npcHitpointsCurrent <= 0)
+         {
+            visible = false;
+            _worldbossEvent = null;
+            return;
+         }
+         _timer.start();
+         onTimerEvent();
+         refreshHitpoints();
+         _button.questGraphic.npcIcon.setUriSprite(_worldbossEvent.npcIconImageUrl,76,71,true);
+      }
+      
+      public function refreshHitpoints() : void
+      {
+         if(_worldbossEvent == null)
+         {
+            return;
+         }
+         if(!_worldbossEvent.isRunning)
+         {
+            return;
+         }
+         _npcHitpointBar.refresh(_worldbossEvent.npcHitpointsTotal,_worldbossEvent.npcHitpointsCurrent);
+      }
+      
+      private function onTimerEvent() : void
+      {
+         if(!ApplicationController.instance.isLoggedIn)
+         {
+            if(_timer)
+            {
+               _timer.stop();
+            }
+            return;
+         }
+         if(_worldbossEvent == null)
+         {
+            return;
+         }
+         _button.txtTimeLeft.text = TimeUtil.secondsToStringFormat(_worldbossEvent.remainingSeconds,"H:m:s");
+      }
+   }
+}
+
+
+
+--- End of com\playata\application\ui\elements\worldboss\UiWorldbossEventButton.as ---
+
+--- com\playata\application\ui\elements\worldboss\UiWorldbossReward.as ---
+
+package com.playata.application.ui.elements.worldboss
+{
+   import com.playata.application.main.GameUtil;
+   import com.playata.application.ui.elements.generic.textfield.UiTextTooltip;
+   import visuals.ui.elements.event.SymbolWorldbossRewardGeneric;
+   
+   public class UiWorldbossReward
+   {
+      
+      private var _content:SymbolWorldbossRewardGeneric = null;
+      
+      private var _tooltip:UiTextTooltip = null;
+      
+      public function UiWorldbossReward(param1:SymbolWorldbossRewardGeneric)
+      {
+         super();
+         _content = param1;
+         _tooltip = new UiTextTooltip(_content,"");
+      }
+      
+      public function dispose() : void
+      {
+         _tooltip.dispose();
+         _tooltip = null;
+      }
+      
+      public function refresh(param1:int, param2:Number) : void
+      {
+         switch(param1 - 1)
+         {
+            case 0:
+               setValue(param1,GameUtil.getEnergyString(param2));
+               break;
+            case 1:
+               setValue(param1,GameUtil.getTrainingSessionsString(param2));
+         }
+      }
+      
+      public function setValue(param1:int, param2:String, param3:String = null) : void
+      {
+         _content.iconQuestEnergy.visible = param1 == 1;
+         _content.iconTrainingSessions.visible = param1 == 2;
+         _content.txtValue.text = param2;
+         if(param3)
+         {
+            _tooltip.text = param3;
+         }
+      }
+   }
+}
+
+
+
+--- End of com\playata\application\ui\elements\worldboss\UiWorldbossReward.as ---
+
+--- visuals\ui\dialogs\SymbolDialogWorldbossAttackCompleteGeneric.as ---
+
+package visuals.ui.dialogs
+{
+   import com.playata.framework.display.Sprite;
+   import com.playata.framework.display.lib.flash.FlashDisplayObjectContainer;
+   import com.playata.framework.display.lib.flash.FlashLabel;
+   import com.playata.framework.display.lib.flash.FlashLabelArea;
+   import com.playata.framework.display.lib.flash.FlashSprite;
+   import com.playata.framework.display.ui.controls.ILabel;
+   import com.playata.framework.display.ui.controls.ILabelArea;
+   import flash.display.MovieClip;
+   import visuals.ui.base.SymbolUiButtonDefaultGeneric;
+   import visuals.ui.elements.battle.SymbolBattleHitpointBarGeneric;
+   import visuals.ui.elements.generic.SymbolBackgroundFrameYellowRoundedGeneric;
+   import visuals.ui.elements.generic.SymbolBackgroundTextBrownGeneric;
+   import visuals.ui.elements.icons.SymbolIconWeaponDamageGeneric;
+   
+   public class SymbolDialogWorldbossAttackCompleteGeneric extends Sprite
+   {
+      
+      private var _nativeObject:SymbolDialogWorldbossAttackComplete = null;
+      
+      public var dialogBackground:SymbolBackgroundFrameYellowRoundedGeneric = null;
+      
+      public var symbolBackgroundTextBrown:SymbolBackgroundTextBrownGeneric = null;
+      
+      public var symbolBackgroundTextBrown2:SymbolBackgroundTextBrownGeneric = null;
+      
+      public var txtAttackCountTotal:ILabel = null;
+      
+      public var txtAttackCountOwn:ILabel = null;
+      
+      public var btnClose:SymbolUiButtonDefaultGeneric = null;
+      
+      public var txtDialogTitle:ILabelArea = null;
+      
+      public var symbolIconWeaponDamage:SymbolIconWeaponDamageGeneric = null;
+      
+      public var txtDamageTotal:ILabel = null;
+      
+      public var progress:SymbolBattleHitpointBarGeneric = null;
+      
+      public var txtHitpoints:ILabel = null;
+      
+      public var txtInfo:ILabelArea = null;
+      
+      public function SymbolDialogWorldbossAttackCompleteGeneric(param1:MovieClip = null)
+      {
+         if(param1)
+         {
+            _nativeObject = param1 as SymbolDialogWorldbossAttackComplete;
+         }
+         else
+         {
+            _nativeObject = new SymbolDialogWorldbossAttackComplete();
+         }
+         super(null,FlashSprite.fromNative(_nativeObject));
+         var _loc2_:FlashDisplayObjectContainer = _sprite as FlashDisplayObjectContainer;
+         dialogBackground = new SymbolBackgroundFrameYellowRoundedGeneric(_nativeObject.dialogBackground);
+         symbolBackgroundTextBrown = new SymbolBackgroundTextBrownGeneric(_nativeObject.symbolBackgroundTextBrown);
+         symbolBackgroundTextBrown2 = new SymbolBackgroundTextBrownGeneric(_nativeObject.symbolBackgroundTextBrown2);
+         txtAttackCountTotal = FlashLabel.fromNative(_nativeObject.txtAttackCountTotal);
+         txtAttackCountOwn = FlashLabel.fromNative(_nativeObject.txtAttackCountOwn);
+         btnClose = new SymbolUiButtonDefaultGeneric(_nativeObject.btnClose);
+         txtDialogTitle = FlashLabelArea.fromNative(_nativeObject.txtDialogTitle);
+         symbolIconWeaponDamage = new SymbolIconWeaponDamageGeneric(_nativeObject.symbolIconWeaponDamage);
+         txtDamageTotal = FlashLabel.fromNative(_nativeObject.txtDamageTotal);
+         progress = new SymbolBattleHitpointBarGeneric(_nativeObject.progress);
+         txtHitpoints = FlashLabel.fromNative(_nativeObject.txtHitpoints);
+         txtInfo = FlashLabelArea.fromNative(_nativeObject.txtInfo);
+      }
+      
+      public function setNativeInstance(param1:SymbolDialogWorldbossAttackComplete) : void
+      {
+         FlashSprite.setNativeInstance(_sprite,param1);
+         _nativeObject = param1;
+         syncInstances();
+      }
+      
+      public function syncInstances() : void
+      {
+         if(_nativeObject.dialogBackground)
+         {
+            dialogBackground.setNativeInstance(_nativeObject.dialogBackground);
+         }
+         if(_nativeObject.symbolBackgroundTextBrown)
+         {
+            symbolBackgroundTextBrown.setNativeInstance(_nativeObject.symbolBackgroundTextBrown);
+         }
+         if(_nativeObject.symbolBackgroundTextBrown2)
+         {
+            symbolBackgroundTextBrown2.setNativeInstance(_nativeObject.symbolBackgroundTextBrown2);
+         }
+         FlashLabel.setNativeInstance(txtAttackCountTotal,_nativeObject.txtAttackCountTotal);
+         FlashLabel.setNativeInstance(txtAttackCountOwn,_nativeObject.txtAttackCountOwn);
+         if(_nativeObject.btnClose)
+         {
+            btnClose.setNativeInstance(_nativeObject.btnClose);
+         }
+         FlashLabelArea.setNativeInstance(txtDialogTitle,_nativeObject.txtDialogTitle);
+         if(_nativeObject.symbolIconWeaponDamage)
+         {
+            symbolIconWeaponDamage.setNativeInstance(_nativeObject.symbolIconWeaponDamage);
+         }
+         FlashLabel.setNativeInstance(txtDamageTotal,_nativeObject.txtDamageTotal);
+         if(_nativeObject.progress)
+         {
+            progress.setNativeInstance(_nativeObject.progress);
+         }
+         FlashLabel.setNativeInstance(txtHitpoints,_nativeObject.txtHitpoints);
+         FlashLabelArea.setNativeInstance(txtInfo,_nativeObject.txtInfo);
+      }
+   }
+}
+
+
+
+--- End of visuals\ui\dialogs\SymbolDialogWorldbossAttackCompleteGeneric.as ---
+
+--- visuals\ui\dialogs\SymbolDialogWorldbossEventCompleteGeneric.as ---
+
+package visuals.ui.dialogs
+{
+   import com.playata.framework.display.Sprite;
+   import com.playata.framework.display.lib.flash.FlashDisplayObjectContainer;
+   import com.playata.framework.display.lib.flash.FlashLabel;
+   import com.playata.framework.display.lib.flash.FlashLabelArea;
+   import com.playata.framework.display.lib.flash.FlashSprite;
+   import com.playata.framework.display.ui.controls.ILabel;
+   import com.playata.framework.display.ui.controls.ILabelArea;
+   import flash.display.MovieClip;
+   import visuals.ui.base.SymbolUiButtonDefaultGeneric;
+   import visuals.ui.elements.event.SymbolWorldbossRewardGeneric;
+   import visuals.ui.elements.generic.SymbolBackgroundFrameYellowRoundedGeneric;
+   import visuals.ui.elements.generic.SymbolBackgroundTextBrownGeneric;
+   import visuals.ui.elements.icons.SymbolIconCharacterGeneric;
+   import visuals.ui.elements.icons.SymbolIconCoinsGeneric;
+   import visuals.ui.elements.icons.SymbolIconWeaponDamageGeneric;
+   import visuals.ui.elements.icons.SymbolIconXpGeneric;
+   import visuals.ui.elements.item.SymbolItemSlotGeneric;
+   import visuals.ui.elements.quest.SymbolNPCPictureGeneric;
+   
+   public class SymbolDialogWorldbossEventCompleteGeneric extends Sprite
+   {
+      
+      private var _nativeObject:SymbolDialogWorldbossEventComplete = null;
+      
+      public var dialogBackground:SymbolBackgroundFrameYellowRoundedGeneric = null;
+      
+      public var rewardBackground:SymbolBackgroundTextBrownGeneric = null;
+      
+      public var symbolBackgroundTextBrown:SymbolBackgroundTextBrownGeneric = null;
+      
+      public var symbolBackgroundTextBrown2:SymbolBackgroundTextBrownGeneric = null;
+      
+      public var txtDialogTitle:ILabel = null;
+      
+      public var btnClose:SymbolUiButtonDefaultGeneric = null;
+      
+      public var iconCoins:SymbolIconCoinsGeneric = null;
+      
+      public var txtCoins:ILabel = null;
+      
+      public var iconXp:SymbolIconXpGeneric = null;
+      
+      public var txtXp:ILabel = null;
+      
+      public var txtRewardsCaption:ILabel = null;
+      
+      public var txtStatisticCaption:ILabel = null;
+      
+      public var txtTopCaption:ILabel = null;
+      
+      public var symbolIconWeaponDamage:SymbolIconWeaponDamageGeneric = null;
+      
+      public var iconWinningStrike:SymbolIconCharacterGeneric = null;
+      
+      public var iconTop:SymbolIconCharacterGeneric = null;
+      
+      public var txtDamageTotal:ILabel = null;
+      
+      public var txtAttackCountTotal:ILabel = null;
+      
+      public var txtAttackCountOwn:ILabel = null;
+      
+      public var txtTopAttacks:ILabel = null;
+      
+      public var txtWinningStrike:ILabel = null;
+      
+      public var itemReward:SymbolItemSlotGeneric = null;
+      
+      public var reward1:SymbolWorldbossRewardGeneric = null;
+      
+      public var reward2:SymbolWorldbossRewardGeneric = null;
+      
+      public var sidekickReward:SymbolItemSlotGeneric = null;
+      
+      public var txtNpcName:ILabelArea = null;
+      
+      public var npcPicture:SymbolNPCPictureGeneric = null;
+      
+      public var txtFled:ILabelArea = null;
+      
+      public var txtDefeated:ILabelArea = null;
+      
+      public var txtNoRewardText:ILabelArea = null;
+      
+      public function SymbolDialogWorldbossEventCompleteGeneric(param1:MovieClip = null)
+      {
+         if(param1)
+         {
+            _nativeObject = param1 as SymbolDialogWorldbossEventComplete;
+         }
+         else
+         {
+            _nativeObject = new SymbolDialogWorldbossEventComplete();
+         }
+         super(null,FlashSprite.fromNative(_nativeObject));
+         var _loc2_:FlashDisplayObjectContainer = _sprite as FlashDisplayObjectContainer;
+         dialogBackground = new SymbolBackgroundFrameYellowRoundedGeneric(_nativeObject.dialogBackground);
+         rewardBackground = new SymbolBackgroundTextBrownGeneric(_nativeObject.rewardBackground);
+         symbolBackgroundTextBrown = new SymbolBackgroundTextBrownGeneric(_nativeObject.symbolBackgroundTextBrown);
+         symbolBackgroundTextBrown2 = new SymbolBackgroundTextBrownGeneric(_nativeObject.symbolBackgroundTextBrown2);
+         txtDialogTitle = FlashLabel.fromNative(_nativeObject.txtDialogTitle);
+         btnClose = new SymbolUiButtonDefaultGeneric(_nativeObject.btnClose);
+         iconCoins = new SymbolIconCoinsGeneric(_nativeObject.iconCoins);
+         txtCoins = FlashLabel.fromNative(_nativeObject.txtCoins);
+         iconXp = new SymbolIconXpGeneric(_nativeObject.iconXp);
+         txtXp = FlashLabel.fromNative(_nativeObject.txtXp);
+         txtRewardsCaption = FlashLabel.fromNative(_nativeObject.txtRewardsCaption);
+         txtStatisticCaption = FlashLabel.fromNative(_nativeObject.txtStatisticCaption);
+         txtTopCaption = FlashLabel.fromNative(_nativeObject.txtTopCaption);
+         symbolIconWeaponDamage = new SymbolIconWeaponDamageGeneric(_nativeObject.symbolIconWeaponDamage);
+         iconWinningStrike = new SymbolIconCharacterGeneric(_nativeObject.iconWinningStrike);
+         iconTop = new SymbolIconCharacterGeneric(_nativeObject.iconTop);
+         txtDamageTotal = FlashLabel.fromNative(_nativeObject.txtDamageTotal);
+         txtAttackCountTotal = FlashLabel.fromNative(_nativeObject.txtAttackCountTotal);
+         txtAttackCountOwn = FlashLabel.fromNative(_nativeObject.txtAttackCountOwn);
+         txtTopAttacks = FlashLabel.fromNative(_nativeObject.txtTopAttacks);
+         txtWinningStrike = FlashLabel.fromNative(_nativeObject.txtWinningStrike);
+         itemReward = new SymbolItemSlotGeneric(_nativeObject.itemReward);
+         reward1 = new SymbolWorldbossRewardGeneric(_nativeObject.reward1);
+         reward2 = new SymbolWorldbossRewardGeneric(_nativeObject.reward2);
+         sidekickReward = new SymbolItemSlotGeneric(_nativeObject.sidekickReward);
+         txtNpcName = FlashLabelArea.fromNative(_nativeObject.txtNpcName);
+         npcPicture = new SymbolNPCPictureGeneric(_nativeObject.npcPicture);
+         txtFled = FlashLabelArea.fromNative(_nativeObject.txtFled);
+         txtDefeated = FlashLabelArea.fromNative(_nativeObject.txtDefeated);
+         txtNoRewardText = FlashLabelArea.fromNative(_nativeObject.txtNoRewardText);
+      }
+      
+      public function setNativeInstance(param1:SymbolDialogWorldbossEventComplete) : void
+      {
+         FlashSprite.setNativeInstance(_sprite,param1);
+         _nativeObject = param1;
+         syncInstances();
+      }
+      
+      public function syncInstances() : void
+      {
+         if(_nativeObject.dialogBackground)
+         {
+            dialogBackground.setNativeInstance(_nativeObject.dialogBackground);
+         }
+         if(_nativeObject.rewardBackground)
+         {
+            rewardBackground.setNativeInstance(_nativeObject.rewardBackground);
+         }
+         if(_nativeObject.symbolBackgroundTextBrown)
+         {
+            symbolBackgroundTextBrown.setNativeInstance(_nativeObject.symbolBackgroundTextBrown);
+         }
+         if(_nativeObject.symbolBackgroundTextBrown2)
+         {
+            symbolBackgroundTextBrown2.setNativeInstance(_nativeObject.symbolBackgroundTextBrown2);
+         }
+         FlashLabel.setNativeInstance(txtDialogTitle,_nativeObject.txtDialogTitle);
+         if(_nativeObject.btnClose)
+         {
+            btnClose.setNativeInstance(_nativeObject.btnClose);
+         }
+         if(_nativeObject.iconCoins)
+         {
+            iconCoins.setNativeInstance(_nativeObject.iconCoins);
+         }
+         FlashLabel.setNativeInstance(txtCoins,_nativeObject.txtCoins);
+         if(_nativeObject.iconXp)
+         {
+            iconXp.setNativeInstance(_nativeObject.iconXp);
+         }
+         FlashLabel.setNativeInstance(txtXp,_nativeObject.txtXp);
+         FlashLabel.setNativeInstance(txtRewardsCaption,_nativeObject.txtRewardsCaption);
+         FlashLabel.setNativeInstance(txtStatisticCaption,_nativeObject.txtStatisticCaption);
+         FlashLabel.setNativeInstance(txtTopCaption,_nativeObject.txtTopCaption);
+         if(_nativeObject.symbolIconWeaponDamage)
+         {
+            symbolIconWeaponDamage.setNativeInstance(_nativeObject.symbolIconWeaponDamage);
+         }
+         if(_nativeObject.iconWinningStrike)
+         {
+            iconWinningStrike.setNativeInstance(_nativeObject.iconWinningStrike);
+         }
+         if(_nativeObject.iconTop)
+         {
+            iconTop.setNativeInstance(_nativeObject.iconTop);
+         }
+         FlashLabel.setNativeInstance(txtDamageTotal,_nativeObject.txtDamageTotal);
+         FlashLabel.setNativeInstance(txtAttackCountTotal,_nativeObject.txtAttackCountTotal);
+         FlashLabel.setNativeInstance(txtAttackCountOwn,_nativeObject.txtAttackCountOwn);
+         FlashLabel.setNativeInstance(txtTopAttacks,_nativeObject.txtTopAttacks);
+         FlashLabel.setNativeInstance(txtWinningStrike,_nativeObject.txtWinningStrike);
+         if(_nativeObject.itemReward)
+         {
+            itemReward.setNativeInstance(_nativeObject.itemReward);
+         }
+         if(_nativeObject.reward1)
+         {
+            reward1.setNativeInstance(_nativeObject.reward1);
+         }
+         if(_nativeObject.reward2)
+         {
+            reward2.setNativeInstance(_nativeObject.reward2);
+         }
+         if(_nativeObject.sidekickReward)
+         {
+            sidekickReward.setNativeInstance(_nativeObject.sidekickReward);
+         }
+         FlashLabelArea.setNativeInstance(txtNpcName,_nativeObject.txtNpcName);
+         if(_nativeObject.npcPicture)
+         {
+            npcPicture.setNativeInstance(_nativeObject.npcPicture);
+         }
+         FlashLabelArea.setNativeInstance(txtFled,_nativeObject.txtFled);
+         FlashLabelArea.setNativeInstance(txtDefeated,_nativeObject.txtDefeated);
+         FlashLabelArea.setNativeInstance(txtNoRewardText,_nativeObject.txtNoRewardText);
+      }
+   }
+}
+
+
+
+--- End of visuals\ui\dialogs\SymbolDialogWorldbossEventCompleteGeneric.as ---
+
+--- visuals\ui\dialogs\SymbolDialogWorldbossEventInfoGeneric.as ---
+
+package visuals.ui.dialogs
+{
+   import com.playata.framework.display.Sprite;
+   import com.playata.framework.display.lib.flash.FlashDisplayObjectContainer;
+   import com.playata.framework.display.lib.flash.FlashLabel;
+   import com.playata.framework.display.lib.flash.FlashLabelArea;
+   import com.playata.framework.display.lib.flash.FlashSprite;
+   import com.playata.framework.display.ui.controls.ILabel;
+   import com.playata.framework.display.ui.controls.ILabelArea;
+   import flash.display.MovieClip;
+   import visuals.ui.base.SymbolUiButtonDefaultGeneric;
+   import visuals.ui.elements.generic.SymbolBackgroundFrameYellowRoundedGeneric;
+   import visuals.ui.elements.worldboss_event.SymbolWorldbossEventPhoneGeneric;
+   
+   public class SymbolDialogWorldbossEventInfoGeneric extends Sprite
+   {
+      
+      private var _nativeObject:SymbolDialogWorldbossEventInfo = null;
+      
+      public var dialogBackground:SymbolBackgroundFrameYellowRoundedGeneric = null;
+      
+      public var phone:SymbolWorldbossEventPhoneGeneric = null;
+      
+      public var btnClose:SymbolUiButtonDefaultGeneric = null;
+      
+      public var txtDialogTitle:ILabelArea = null;
+      
+      public var txtCallerName:ILabel = null;
+      
+      public var txtInfo:ILabelArea = null;
+      
+      public var txtRewards:ILabelArea = null;
+      
+      public function SymbolDialogWorldbossEventInfoGeneric(param1:MovieClip = null)
+      {
+         if(param1)
+         {
+            _nativeObject = param1 as SymbolDialogWorldbossEventInfo;
+         }
+         else
+         {
+            _nativeObject = new SymbolDialogWorldbossEventInfo();
+         }
+         super(null,FlashSprite.fromNative(_nativeObject));
+         var _loc2_:FlashDisplayObjectContainer = _sprite as FlashDisplayObjectContainer;
+         dialogBackground = new SymbolBackgroundFrameYellowRoundedGeneric(_nativeObject.dialogBackground);
+         phone = new SymbolWorldbossEventPhoneGeneric(_nativeObject.phone);
+         btnClose = new SymbolUiButtonDefaultGeneric(_nativeObject.btnClose);
+         txtDialogTitle = FlashLabelArea.fromNative(_nativeObject.txtDialogTitle);
+         txtCallerName = FlashLabel.fromNative(_nativeObject.txtCallerName);
+         txtInfo = FlashLabelArea.fromNative(_nativeObject.txtInfo);
+         txtRewards = FlashLabelArea.fromNative(_nativeObject.txtRewards);
+      }
+      
+      public function setNativeInstance(param1:SymbolDialogWorldbossEventInfo) : void
+      {
+         FlashSprite.setNativeInstance(_sprite,param1);
+         _nativeObject = param1;
+         syncInstances();
+      }
+      
+      public function syncInstances() : void
+      {
+         if(_nativeObject.dialogBackground)
+         {
+            dialogBackground.setNativeInstance(_nativeObject.dialogBackground);
+         }
+         if(_nativeObject.phone)
+         {
+            phone.setNativeInstance(_nativeObject.phone);
+         }
+         if(_nativeObject.btnClose)
+         {
+            btnClose.setNativeInstance(_nativeObject.btnClose);
+         }
+         FlashLabelArea.setNativeInstance(txtDialogTitle,_nativeObject.txtDialogTitle);
+         FlashLabel.setNativeInstance(txtCallerName,_nativeObject.txtCallerName);
+         FlashLabelArea.setNativeInstance(txtInfo,_nativeObject.txtInfo);
+         FlashLabelArea.setNativeInstance(txtRewards,_nativeObject.txtRewards);
+      }
+   }
+}
+
+
+
+--- End of visuals\ui\dialogs\SymbolDialogWorldbossEventInfoGeneric.as ---
+
+--- visuals\ui\elements\event\SymbolWorldbossRewardGeneric.as ---
+
+package visuals.ui.elements.event
+{
+   import com.playata.framework.display.Sprite;
+   import com.playata.framework.display.lib.flash.FlashDisplayObjectContainer;
+   import com.playata.framework.display.lib.flash.FlashLabel;
+   import com.playata.framework.display.lib.flash.FlashSprite;
+   import com.playata.framework.display.ui.controls.ILabel;
+   import flash.display.MovieClip;
+   import visuals.ui.elements.icons.SymbolIconEnergyGeneric;
+   import visuals.ui.elements.icons.SymbolIconTrainingSessionsGeneric;
+   
+   public class SymbolWorldbossRewardGeneric extends Sprite
+   {
+      
+      private var _nativeObject:SymbolWorldbossReward = null;
+      
+      public var iconTrainingSessions:SymbolIconTrainingSessionsGeneric = null;
+      
+      public var iconQuestEnergy:SymbolIconEnergyGeneric = null;
+      
+      public var txtValue:ILabel = null;
+      
+      public function SymbolWorldbossRewardGeneric(param1:MovieClip = null)
+      {
+         if(param1)
+         {
+            _nativeObject = param1 as SymbolWorldbossReward;
+         }
+         else
+         {
+            _nativeObject = new SymbolWorldbossReward();
+         }
+         super(null,FlashSprite.fromNative(_nativeObject));
+         var _loc2_:FlashDisplayObjectContainer = _sprite as FlashDisplayObjectContainer;
+         iconTrainingSessions = new SymbolIconTrainingSessionsGeneric(_nativeObject.iconTrainingSessions);
+         iconQuestEnergy = new SymbolIconEnergyGeneric(_nativeObject.iconQuestEnergy);
+         txtValue = FlashLabel.fromNative(_nativeObject.txtValue);
+      }
+      
+      public function setNativeInstance(param1:SymbolWorldbossReward) : void
+      {
+         FlashSprite.setNativeInstance(_sprite,param1);
+         _nativeObject = param1;
+         syncInstances();
+      }
+      
+      public function syncInstances() : void
+      {
+         if(_nativeObject.iconTrainingSessions)
+         {
+            iconTrainingSessions.setNativeInstance(_nativeObject.iconTrainingSessions);
+         }
+         if(_nativeObject.iconQuestEnergy)
+         {
+            iconQuestEnergy.setNativeInstance(_nativeObject.iconQuestEnergy);
+         }
+         FlashLabel.setNativeInstance(txtValue,_nativeObject.txtValue);
+      }
+   }
+}
+
+
+
+--- End of visuals\ui\elements\event\SymbolWorldbossRewardGeneric.as ---
+
+--- visuals\ui\elements\worldboss_event\SymbolButtonWorldbossEventGeneric.as ---
+
+package visuals.ui.elements.worldboss_event
+{
+   import com.playata.framework.display.Sprite;
+   import com.playata.framework.display.lib.flash.FlashDisplayObjectContainer;
+   import com.playata.framework.display.lib.flash.FlashLabel;
+   import com.playata.framework.display.lib.flash.FlashSprite;
+   import com.playata.framework.display.ui.controls.ILabel;
+   import flash.display.MovieClip;
+   import visuals.ui.elements.battle.SymbolBattleHitpointBarGeneric;
+   import visuals.ui.elements.herobook.SymbolIconHerobookTimerBackgroundGeneric;
+   
+   public class SymbolButtonWorldbossEventGeneric extends Sprite
+   {
+      
+      private var _nativeObject:SymbolButtonWorldbossEvent = null;
+      
+      public var questGraphic:SymbolWorldbossEventGraphicGeneric = null;
+      
+      public var progress:SymbolBattleHitpointBarGeneric = null;
+      
+      public var symbolIconHerobookTimerBackground:SymbolIconHerobookTimerBackgroundGeneric = null;
+      
+      public var txtTimeLeft:ILabel = null;
+      
+      public function SymbolButtonWorldbossEventGeneric(param1:MovieClip = null)
+      {
+         if(param1)
+         {
+            _nativeObject = param1 as SymbolButtonWorldbossEvent;
+         }
+         else
+         {
+            _nativeObject = new SymbolButtonWorldbossEvent();
+         }
+         super(null,FlashSprite.fromNative(_nativeObject));
+         var _loc2_:FlashDisplayObjectContainer = _sprite as FlashDisplayObjectContainer;
+         questGraphic = new SymbolWorldbossEventGraphicGeneric(_nativeObject.questGraphic);
+         progress = new SymbolBattleHitpointBarGeneric(_nativeObject.progress);
+         symbolIconHerobookTimerBackground = new SymbolIconHerobookTimerBackgroundGeneric(_nativeObject.symbolIconHerobookTimerBackground);
+         txtTimeLeft = FlashLabel.fromNative(_nativeObject.txtTimeLeft);
+      }
+      
+      public function setNativeInstance(param1:SymbolButtonWorldbossEvent) : void
+      {
+         FlashSprite.setNativeInstance(_sprite,param1);
+         _nativeObject = param1;
+         syncInstances();
+      }
+      
+      public function syncInstances() : void
+      {
+         if(_nativeObject.questGraphic)
+         {
+            questGraphic.setNativeInstance(_nativeObject.questGraphic);
+         }
+         if(_nativeObject.progress)
+         {
+            progress.setNativeInstance(_nativeObject.progress);
+         }
+         if(_nativeObject.symbolIconHerobookTimerBackground)
+         {
+            symbolIconHerobookTimerBackground.setNativeInstance(_nativeObject.symbolIconHerobookTimerBackground);
+         }
+         FlashLabel.setNativeInstance(txtTimeLeft,_nativeObject.txtTimeLeft);
+      }
+   }
+}
+
+
+
+--- End of visuals\ui\elements\worldboss_event\SymbolButtonWorldbossEventGeneric.as ---
+
+--- visuals\ui\elements\worldboss_event\SymbolItemRewardIconGeneric.as ---
+
+package visuals.ui.elements.worldboss_event
+{
+   import com.playata.framework.display.Sprite;
+   import com.playata.framework.display.lib.flash.FlashDisplayObjectContainer;
+   import com.playata.framework.display.lib.flash.FlashSprite;
+   import flash.display.MovieClip;
+   import visuals.ui.base.SymbolPlaceholderGeneric;
+   
+   public class SymbolItemRewardIconGeneric extends Sprite
+   {
+      
+      private var _nativeObject:SymbolItemRewardIcon = null;
+      
+      public var icon:SymbolPlaceholderGeneric = null;
+      
+      public function SymbolItemRewardIconGeneric(param1:MovieClip = null)
+      {
+         if(param1)
+         {
+            _nativeObject = param1 as SymbolItemRewardIcon;
+         }
+         else
+         {
+            _nativeObject = new SymbolItemRewardIcon();
+         }
+         super(null,FlashSprite.fromNative(_nativeObject));
+         var _loc2_:FlashDisplayObjectContainer = _sprite as FlashDisplayObjectContainer;
+         icon = new SymbolPlaceholderGeneric(_nativeObject.icon);
+      }
+      
+      public function setNativeInstance(param1:SymbolItemRewardIcon) : void
+      {
+         FlashSprite.setNativeInstance(_sprite,param1);
+         _nativeObject = param1;
+         syncInstances();
+      }
+      
+      public function syncInstances() : void
+      {
+         if(_nativeObject.icon)
+         {
+            icon.setNativeInstance(_nativeObject.icon);
+         }
+      }
+   }
+}
+
+
+
+--- End of visuals\ui\elements\worldboss_event\SymbolItemRewardIconGeneric.as ---
+
+--- visuals\ui\elements\worldboss_event\SymbolWorldbossAttackBriefingContentGeneric.as ---
+
+package visuals.ui.elements.worldboss_event
+{
+   import com.playata.framework.display.Sprite;
+   import com.playata.framework.display.lib.flash.FlashDisplayObjectContainer;
+   import com.playata.framework.display.lib.flash.FlashLabel;
+   import com.playata.framework.display.lib.flash.FlashLabelArea;
+   import com.playata.framework.display.lib.flash.FlashSprite;
+   import com.playata.framework.display.ui.controls.ILabel;
+   import com.playata.framework.display.ui.controls.ILabelArea;
+   import flash.display.MovieClip;
+   import visuals.ui.elements.battle.SymbolBattleHitpointBarGeneric;
+   import visuals.ui.elements.event.SymbolWorldbossRewardGeneric;
+   import visuals.ui.elements.generic.SymbolBackgroundRoundedCorner10Generic;
+   import visuals.ui.elements.generic.SymbolBackgroundTextBrownGeneric;
+   import visuals.ui.elements.icons.SymbolIconCoinsGeneric;
+   import visuals.ui.elements.icons.SymbolIconDurationGeneric;
+   import visuals.ui.elements.icons.SymbolIconGiftGeneric;
+   import visuals.ui.elements.icons.SymbolIconXpGeneric;
+   import visuals.ui.elements.quest.SymbolNPCPictureGeneric;
+   
+   public class SymbolWorldbossAttackBriefingContentGeneric extends Sprite
+   {
+      
+      private var _nativeObject:SymbolWorldbossAttackBriefingContent = null;
+      
+      public var symbolBackgroundTextBrown:SymbolBackgroundTextBrownGeneric = null;
+      
+      public var symbolBackgroundTextBrown2:SymbolBackgroundTextBrownGeneric = null;
+      
+      public var txtNpcName:ILabelArea = null;
+      
+      public var txtRewardsCaption:ILabel = null;
+      
+      public var txtRequirementsCaption:ILabel = null;
+      
+      public var iconCoins:SymbolIconCoinsGeneric = null;
+      
+      public var iconXp:SymbolIconXpGeneric = null;
+      
+      public var iconItem:SymbolIconGiftGeneric = null;
+      
+      public var iconTopPoolItem:SymbolItemRewardIconGeneric = null;
+      
+      public var iconTopRankItem:SymbolItemRewardIconGeneric = null;
+      
+      public var reward1:SymbolWorldbossRewardGeneric = null;
+      
+      public var reward2:SymbolWorldbossRewardGeneric = null;
+      
+      public var npcPicture:SymbolNPCPictureGeneric = null;
+      
+      public var txtCoins:ILabel = null;
+      
+      public var txtXp:ILabel = null;
+      
+      public var iconDuration:SymbolIconDurationGeneric = null;
+      
+      public var txtDuration:ILabel = null;
+      
+      public var txtRewardTop1:ILabel = null;
+      
+      public var txtRewardTop10:ILabel = null;
+      
+      public var txtRewardOther:ILabel = null;
+      
+      public var progress:SymbolBattleHitpointBarGeneric = null;
+      
+      public var symbolBackgroundRoundedCorner10:SymbolBackgroundRoundedCorner10Generic = null;
+      
+      public var txtTimeLeft:ILabel = null;
+      
+      public var txtTitle:ILabel = null;
+      
+      public function SymbolWorldbossAttackBriefingContentGeneric(param1:MovieClip = null)
+      {
+         if(param1)
+         {
+            _nativeObject = param1 as SymbolWorldbossAttackBriefingContent;
+         }
+         else
+         {
+            _nativeObject = new SymbolWorldbossAttackBriefingContent();
+         }
+         super(null,FlashSprite.fromNative(_nativeObject));
+         var _loc2_:FlashDisplayObjectContainer = _sprite as FlashDisplayObjectContainer;
+         symbolBackgroundTextBrown = new SymbolBackgroundTextBrownGeneric(_nativeObject.symbolBackgroundTextBrown);
+         symbolBackgroundTextBrown2 = new SymbolBackgroundTextBrownGeneric(_nativeObject.symbolBackgroundTextBrown2);
+         txtNpcName = FlashLabelArea.fromNative(_nativeObject.txtNpcName);
+         txtRewardsCaption = FlashLabel.fromNative(_nativeObject.txtRewardsCaption);
+         txtRequirementsCaption = FlashLabel.fromNative(_nativeObject.txtRequirementsCaption);
+         iconCoins = new SymbolIconCoinsGeneric(_nativeObject.iconCoins);
+         iconXp = new SymbolIconXpGeneric(_nativeObject.iconXp);
+         iconItem = new SymbolIconGiftGeneric(_nativeObject.iconItem);
+         iconTopPoolItem = new SymbolItemRewardIconGeneric(_nativeObject.iconTopPoolItem);
+         iconTopRankItem = new SymbolItemRewardIconGeneric(_nativeObject.iconTopRankItem);
+         reward1 = new SymbolWorldbossRewardGeneric(_nativeObject.reward1);
+         reward2 = new SymbolWorldbossRewardGeneric(_nativeObject.reward2);
+         npcPicture = new SymbolNPCPictureGeneric(_nativeObject.npcPicture);
+         txtCoins = FlashLabel.fromNative(_nativeObject.txtCoins);
+         txtXp = FlashLabel.fromNative(_nativeObject.txtXp);
+         iconDuration = new SymbolIconDurationGeneric(_nativeObject.iconDuration);
+         txtDuration = FlashLabel.fromNative(_nativeObject.txtDuration);
+         txtRewardTop1 = FlashLabel.fromNative(_nativeObject.txtRewardTop1);
+         txtRewardTop10 = FlashLabel.fromNative(_nativeObject.txtRewardTop10);
+         txtRewardOther = FlashLabel.fromNative(_nativeObject.txtRewardOther);
+         progress = new SymbolBattleHitpointBarGeneric(_nativeObject.progress);
+         symbolBackgroundRoundedCorner10 = new SymbolBackgroundRoundedCorner10Generic(_nativeObject.symbolBackgroundRoundedCorner10);
+         txtTimeLeft = FlashLabel.fromNative(_nativeObject.txtTimeLeft);
+         txtTitle = FlashLabel.fromNative(_nativeObject.txtTitle);
+      }
+      
+      public function setNativeInstance(param1:SymbolWorldbossAttackBriefingContent) : void
+      {
+         FlashSprite.setNativeInstance(_sprite,param1);
+         _nativeObject = param1;
+         syncInstances();
+      }
+      
+      public function syncInstances() : void
+      {
+         if(_nativeObject.symbolBackgroundTextBrown)
+         {
+            symbolBackgroundTextBrown.setNativeInstance(_nativeObject.symbolBackgroundTextBrown);
+         }
+         if(_nativeObject.symbolBackgroundTextBrown2)
+         {
+            symbolBackgroundTextBrown2.setNativeInstance(_nativeObject.symbolBackgroundTextBrown2);
+         }
+         FlashLabelArea.setNativeInstance(txtNpcName,_nativeObject.txtNpcName);
+         FlashLabel.setNativeInstance(txtRewardsCaption,_nativeObject.txtRewardsCaption);
+         FlashLabel.setNativeInstance(txtRequirementsCaption,_nativeObject.txtRequirementsCaption);
+         if(_nativeObject.iconCoins)
+         {
+            iconCoins.setNativeInstance(_nativeObject.iconCoins);
+         }
+         if(_nativeObject.iconXp)
+         {
+            iconXp.setNativeInstance(_nativeObject.iconXp);
+         }
+         if(_nativeObject.iconItem)
+         {
+            iconItem.setNativeInstance(_nativeObject.iconItem);
+         }
+         if(_nativeObject.iconTopPoolItem)
+         {
+            iconTopPoolItem.setNativeInstance(_nativeObject.iconTopPoolItem);
+         }
+         if(_nativeObject.iconTopRankItem)
+         {
+            iconTopRankItem.setNativeInstance(_nativeObject.iconTopRankItem);
+         }
+         if(_nativeObject.reward1)
+         {
+            reward1.setNativeInstance(_nativeObject.reward1);
+         }
+         if(_nativeObject.reward2)
+         {
+            reward2.setNativeInstance(_nativeObject.reward2);
+         }
+         if(_nativeObject.npcPicture)
+         {
+            npcPicture.setNativeInstance(_nativeObject.npcPicture);
+         }
+         FlashLabel.setNativeInstance(txtCoins,_nativeObject.txtCoins);
+         FlashLabel.setNativeInstance(txtXp,_nativeObject.txtXp);
+         if(_nativeObject.iconDuration)
+         {
+            iconDuration.setNativeInstance(_nativeObject.iconDuration);
+         }
+         FlashLabel.setNativeInstance(txtDuration,_nativeObject.txtDuration);
+         FlashLabel.setNativeInstance(txtRewardTop1,_nativeObject.txtRewardTop1);
+         FlashLabel.setNativeInstance(txtRewardTop10,_nativeObject.txtRewardTop10);
+         FlashLabel.setNativeInstance(txtRewardOther,_nativeObject.txtRewardOther);
+         if(_nativeObject.progress)
+         {
+            progress.setNativeInstance(_nativeObject.progress);
+         }
+         if(_nativeObject.symbolBackgroundRoundedCorner10)
+         {
+            symbolBackgroundRoundedCorner10.setNativeInstance(_nativeObject.symbolBackgroundRoundedCorner10);
+         }
+         FlashLabel.setNativeInstance(txtTimeLeft,_nativeObject.txtTimeLeft);
+         FlashLabel.setNativeInstance(txtTitle,_nativeObject.txtTitle);
+      }
+   }
+}
+
+
+
+--- End of visuals\ui\elements\worldboss_event\SymbolWorldbossAttackBriefingContentGeneric.as ---
+
+--- visuals\ui\elements\worldboss_event\SymbolWorldbossEventGraphicGeneric.as ---
+
+package visuals.ui.elements.worldboss_event
+{
+   import com.playata.framework.display.Sprite;
+   import com.playata.framework.display.lib.flash.FlashDisplayObjectContainer;
+   import com.playata.framework.display.lib.flash.FlashSprite;
+   import flash.display.MovieClip;
+   import visuals.ui.base.SymbolDummyGeneric;
+   import visuals.ui.base.SymbolPlaceholderGeneric;
+   
+   public class SymbolWorldbossEventGraphicGeneric extends Sprite
+   {
+      
+      private var _nativeObject:SymbolWorldbossEventGraphic = null;
+      
+      public var npcIcon:SymbolPlaceholderGeneric = null;
+      
+      public var clickLayerDescription:SymbolDummyGeneric = null;
+      
+      public function SymbolWorldbossEventGraphicGeneric(param1:MovieClip = null)
+      {
+         if(param1)
+         {
+            _nativeObject = param1 as SymbolWorldbossEventGraphic;
+         }
+         else
+         {
+            _nativeObject = new SymbolWorldbossEventGraphic();
+         }
+         super(null,FlashSprite.fromNative(_nativeObject));
+         var _loc2_:FlashDisplayObjectContainer = _sprite as FlashDisplayObjectContainer;
+         npcIcon = new SymbolPlaceholderGeneric(_nativeObject.npcIcon);
+         clickLayerDescription = new SymbolDummyGeneric(_nativeObject.clickLayerDescription);
+      }
+      
+      public function setNativeInstance(param1:SymbolWorldbossEventGraphic) : void
+      {
+         FlashSprite.setNativeInstance(_sprite,param1);
+         _nativeObject = param1;
+         syncInstances();
+      }
+      
+      public function syncInstances() : void
+      {
+         if(_nativeObject.npcIcon)
+         {
+            npcIcon.setNativeInstance(_nativeObject.npcIcon);
+         }
+         if(_nativeObject.clickLayerDescription)
+         {
+            clickLayerDescription.setNativeInstance(_nativeObject.clickLayerDescription);
+         }
+      }
+   }
+}
+
+
+
+--- End of visuals\ui\elements\worldboss_event\SymbolWorldbossEventGraphicGeneric.as ---
+
+--- visuals\ui\elements\worldboss_event\SymbolWorldbossEventPhoneGeneric.as ---
+
+package visuals.ui.elements.worldboss_event
+{
+   import com.playata.framework.display.Sprite;
+   import com.playata.framework.display.lib.flash.FlashDisplayObjectContainer;
+   import com.playata.framework.display.lib.flash.FlashSprite;
+   import flash.display.MovieClip;
+   
+   public class SymbolWorldbossEventPhoneGeneric extends Sprite
+   {
+      
+      private var _nativeObject:SymbolWorldbossEventPhone = null;
+      
+      public function SymbolWorldbossEventPhoneGeneric(param1:MovieClip = null)
+      {
+         if(param1)
+         {
+            _nativeObject = param1 as SymbolWorldbossEventPhone;
+         }
+         else
+         {
+            _nativeObject = new SymbolWorldbossEventPhone();
+         }
+         super(null,FlashSprite.fromNative(_nativeObject));
+         var _loc2_:FlashDisplayObjectContainer = _sprite as FlashDisplayObjectContainer;
+      }
+      
+      public function setNativeInstance(param1:SymbolWorldbossEventPhone) : void
+      {
+         FlashSprite.setNativeInstance(_sprite,param1);
+         _nativeObject = param1;
+         syncInstances();
+      }
+      
+      public function syncInstances() : void
+      {
+      }
+   }
+}
+
+
+
+--- End of visuals\ui\elements\worldboss_event\SymbolWorldbossEventPhoneGeneric.as ---
+
