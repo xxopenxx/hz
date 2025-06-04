@@ -34,7 +34,7 @@ class startWorldbossEvent {
         ]);
         $event->save();
         // Reset danych graczy (przypisanie do eventu)
-        \Schema\WorldbossEvent::query("UPDATE `character` SET worldboss_event_id={$event->id}, worldboss_event_attack_count=0, active_worldboss_attack_id=0");
+        \Srv\DB::sql("UPDATE `character` SET worldboss_event_id={$event->id}, worldboss_event_attack_count=0, active_worldboss_attack_id=0");
         Core::req()->data = ['worldboss_event_started' => $event->id];
     }
 } 
