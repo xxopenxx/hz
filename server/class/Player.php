@@ -1141,4 +1141,33 @@ class Player extends Entity{
         }
         return 0;
     }
+
+    /**
+     * Pobiera aktywne wydarzenie Worldboss (bandyta) przypisane do postaci.
+     * Zwraca null jeżeli brak aktywnego wydarzenia lub jest ono zakończone.
+     */
+    public function getActiveWorldbossEvent() {
+        if (!$this->character->worldboss_event_id) {
+            return null;
+        }
+        $event = \Schema\WorldbossEvent::find(function($q) {
+            $q->where('id', $this->character->worldboss_event_id);
+        });
+        if (!$event) {
+            return null;
+        }
+        if ($event->status != 1 || time() > $event->ts_end) {
+            return null;
+        }
+        return $event;
+    }
+
+    /**
+     * Pobiera atak Worldbossa o podanym identyfikatorze należący do postaci.
+     */
+    public function getWorldbossAttackById($attackId) {
+        return \Schema\WorldbossAttack::find(function($q) use ($attackId) {
+            $q->where('id', $attackId)->where('character_id', $this->character->id);
+        });
+    }
 }
