@@ -53,6 +53,18 @@ return [
         "server"=>[
             'flash_ver'=>       'flash_129',
         ],
+        "worldboss_admin_token" => "changeme",
+        "worldboss_events" => [
+            "demo" => [
+                "npc_identifier" => "bandit_basic",
+                "min_level" => 1,
+                "max_level" => 400,
+                "duration_hours" => 24,
+                "hp" => 100000,
+                "reward_top_rank_item" => "",
+                "reward_top_pool_item" => ""
+            ]
+        ],
         "constants"=>[
             //Init
             "init_game_currency"=>1,
@@ -70,6 +82,12 @@ return [
             "init_max_free_shop_refreshes"=>1,
             "init_resource_quest_amount"=>4,
             "tutorial_finished_premium_currency"=>5,
+            "worldboss_attack_duration"=>60,
+            "worldboss_attack_instant_cost"=>1,
+            "worldboss_reward_per_attack"=>[
+                'coins'=>50,
+                'xp'=>50
+            ],
             "account_confirmed_premium_currency"=>10,
             "account_reactivated_premium_currency"=>30,
             //
