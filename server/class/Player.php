@@ -1170,4 +1170,3 @@ class Player extends Entity{
             $q->where('id', $attackId)->where('character_id', $this->character->id);
         });
     }
-}
