@@ -1141,4 +1141,57 @@ class Player extends Entity{
         }
         return 0;
     }
+
+    /**
+     * Pobiera aktywne wydarzenie Worldboss (bandyta) przypisane do postaci.
+     * Zwraca null jeżeli brak aktywnego wydarzenia lub jest ono zakończone.
+     */
+    public function getActiveWorldbossEvent() {
+        if (!$this->character->worldboss_event_id) {
+            return null;
+        }
+        $event = \Schema\WorldbossEvent::find(function($q) {
+            $q->where('id', $this->character->worldboss_event_id);
+        });
+        if (!$event) {
+            return null;
+        }
+        if ($event->status != 1 || time() > $event->ts_end) {
+            return null;
+        }
+        return $event;
+    }
+
+    /**
+     * Pobiera atak Worldbossa o podanym identyfikatorze należący do postaci.
+     */
+    public function getWorldbossAttackById($attackId) {
+        return \Schema\WorldbossAttack::find(function($q) use ($attackId) {
+            $q->where('id', $attackId)->where('character_id', $this->character->id);
+        });
+    }
+
+    /**
+     * Calculates the total reward for a worldboss event based on all attacks
+     * performed by this character. Returns an associative array containing
+     * coins, xp and potential item rewards.
+     */
+    public function getWorldbossReward($eventId) {
+        $coins = \Schema\WorldbossAttack::sum('coin_reward', function($q) use ($eventId) {
+            $q->where('worldboss_event_id', $eventId)->where('character_id', $this->character->id);
+        });
+        $xp = \Schema\WorldbossAttack::sum('xp_reward', function($q) use ($eventId) {
+            $q->where('worldboss_event_id', $eventId)->where('character_id', $this->character->id);
+        });
+        return [
+            'id' => 0,
+            'worldboss_event_id' => $eventId,
+            'game_currency' => intval($coins),
+            'xp' => intval($xp),
+            'item_id' => 0,
+            'sidekick_item_id' => 0,
+            'rewards' => ''
+        ];
+    }
 }
+

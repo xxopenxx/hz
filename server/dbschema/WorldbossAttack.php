@@ -24,4 +24,4 @@ class WorldbossAttack extends Record implements JsonSerializable {
     public function jsonSerialize() {
         return $this->getData();
     }
-} 
+}
